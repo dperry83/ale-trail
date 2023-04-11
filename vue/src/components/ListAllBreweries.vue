@@ -4,13 +4,18 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>History</th>
                     <th>Address</th>
                     <th>Phone</th>
-                    <th>Website</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- insert v-for loop for each brewery -->
+                <tr v-for="item in breweries" v-bind:key="item.brewery_id">
+                    <td> {{ item.name }} </td>
+                    <td> {{ item.history }} </td>
+                    <td> {{ item.address }} </td>
+                    <td> {{ item.phone }} </td>
+                </tr>
             </tbody>
         </table>
     </div>
