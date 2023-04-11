@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
+import Breweries from '../views/Breweries.vue'
 
 Vue.use(Router)
 
@@ -51,6 +52,15 @@ const router = new Router({
       component: Register,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: "/breweries",
+      name: "breweries",
+      component: Breweries,
+      meta: {
+        requiresAuth: false
+        // ultimately: require authentication?
       }
     }
   ]
