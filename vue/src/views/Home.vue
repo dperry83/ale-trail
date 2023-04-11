@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+    <router-link to="/breweries">View All Breweries</router-link> <br/>
+    <router-link to="/beers">View All Beers</router-link>
   </div>
 </template>
 
