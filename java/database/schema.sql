@@ -7,13 +7,13 @@ DROP TABLE IF EXISTS reviews;
 
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
-    role_id INT NOT NULL,
+    role VARCHAR(50) NOT NULL,
     username varchar(50) NOT NULL UNIQUE,
     password_hash varchar(200) NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    city VARCHAR(255) NOT NULL,
-    state VARCHAR(2) NOT NULL,
-    zip VARCHAR(10) NOT NULL
+    name VARCHAR(255) ,
+    city VARCHAR(255),
+    state VARCHAR(2),
+    zip VARCHAR(10)
 );
 
 
