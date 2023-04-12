@@ -32,7 +32,7 @@ export default {
     name: 'brewery-list',
     data() {
         return {
-            brewery: [],
+            breweries: [],
             isLoading: true,
         }
     },
@@ -40,7 +40,7 @@ export default {
         BreweryService
             .getAllBreweries()
             .then( response => {
-                this.brewery = response.data;
+                this.breweries = response.data;
                 this.isLoading = false;
             })
     }
@@ -48,5 +48,18 @@ export default {
 </script>
 
 <style>
-
+table {
+    width: 80%;
+    margin-left: 10%;
+}
+th, td {
+    text-align: center;
+}
+td {
+    padding-right: 10px;
+    vertical-align: top;
+}
+tr:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+}
 </style>

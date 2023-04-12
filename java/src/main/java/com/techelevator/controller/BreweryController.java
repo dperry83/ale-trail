@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@PreAuthorize("permitAll")
+//@PreAuthorize("permitAll")
 @CrossOrigin
 @RestController
 public class BreweryController {
@@ -25,8 +25,8 @@ public BreweryController(breweryDao breweryDao) {
     this.breweryDAO = breweryDao;
 }
 
-@PreAuthorize("permitAll")
-@RequestMapping(path="/brewery", method = RequestMethod.GET)
+//@PreAuthorize("permitAll")
+@RequestMapping(path="/breweries", method = RequestMethod.GET)
 public List<Brewery> getAllBrewery() {
     List<Brewery> listOfBreweries = breweryDAO.getAllBrewery();
     return listOfBreweries;

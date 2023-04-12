@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <router-link to="/brewery">View All Breweries</router-link> <br/>
+    <router-link to="/breweries">View All Breweries</router-link> <br/>
     <router-link to="/beers">View All Beers</router-link>
   </div>
 </template>
@@ -11,3 +11,5 @@ export default {
   name: "home"
 };
 </script>
+
+

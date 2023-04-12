@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@PreAuthorize("permitAll")
+//@PreAuthorize("permitAll")
 @RestController
 @CrossOrigin
 public class BeerController {
@@ -23,7 +23,7 @@ public class BeerController {
         this.beerDAO = beerDao;
     }
 
-    @PreAuthorize("permitAll")
+//    @PreAuthorize("permitAll")
     @RequestMapping(path = "/beers", method=RequestMethod.GET)
     public List<Beer> getAllBeer(){
         List<Beer> listOfBeer = beerDAO.getAllBeer();

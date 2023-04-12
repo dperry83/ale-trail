@@ -49,5 +49,18 @@ export default {
 </script>
 
 <style>
-
+table {
+    width: 80%;
+    margin-left: 10%;
+}
+th, td {
+    text-align: center;
+}
+td {
+    padding-right: 10px;
+    vertical-align: top;
+}
+tr:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+}
 </style>
