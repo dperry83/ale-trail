@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import Breweries from '../views/Breweries.vue'
 import Beers from '../views/Beers.vue'
+import FinerDetails from '../views/FinerDetails.vue'
 
 Vue.use(Router)
 
@@ -72,7 +73,12 @@ const router = new Router({
           requiresAuth: false
           // ultimately: require authentication?
         }
-    }
+    },
+      {
+        path: "/:id",
+        name: "finerdetails",
+        component: FinerDetails
+      }
   ]
 })
 
