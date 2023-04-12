@@ -6,6 +6,6 @@ const http = axios.create({
 
 export default {
     getAllBreweries() {
-        return http.get('/breweries')
+        return http.get('/brewery')
     }
 }

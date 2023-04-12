@@ -9,6 +9,10 @@
                     <th>Phone</th>
                 </tr>
             </thead>
+
+            <div class="loading" v-if="isLoading">
+                <img src=" ../public/beer-67.gif" />
+            </div>
             <tbody>
                 <tr v-for="item in breweries" v-bind:key="item.brewery_id">
                     <td> {{ item.name }} </td>
@@ -28,14 +32,16 @@ export default {
     name: 'brewery-list',
     data() {
         return {
-            breweries: []
+            brewery: [],
+            isLoading: true,
         }
     },
     created() {
         BreweryService
             .getAllBreweries()
             .then( response => {
-                this.breweries = response.data;
+                this.brewery = response.data;
+                this.isLoading = false;
             })
     }
 }

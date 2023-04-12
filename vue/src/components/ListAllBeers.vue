@@ -9,6 +9,11 @@
                     <th>Beer Type</th>
                 </tr>
             </thead>
+
+             <div class="loading" v-if="isLoading">
+                <img src=" ../public/beer-67.gif" />
+            </div>
+
             <tbody>
                 <tr v-for="item in beers" v-bind:key="item.beers_id">
                     <td> {{ item.name }} </td>
@@ -28,7 +33,8 @@ export default {
     name: 'beer-list',
     data() {
         return {
-            beers: []
+            beers: [],
+            isLoading: true,
         }
     },
     created() {
@@ -36,6 +42,7 @@ export default {
             .getAllBeers()
             .then( response => {
                 this.beers = response.data;
+                this.isLoading = false;
             })
     }
 }
