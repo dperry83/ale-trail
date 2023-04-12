@@ -12,13 +12,14 @@ public interface beersDao {
 
     void deleteBeer(long beerId);
 
-    void saveBeer(Beer beer);
 
     Beer getBeerById(long beerId);
 
-    void updateBeer(Beer beer);
+    boolean updateBeer(Beer beer);
 
-    List<Beer> getBeerByBrewerId(long breweryId);
+    List<Beer> getBeerByBreweryId(long breweryId);
+
+    Beer getBeerByName(String name);
 
 
 }

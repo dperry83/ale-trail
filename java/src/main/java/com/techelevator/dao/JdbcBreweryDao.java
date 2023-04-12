@@ -74,7 +74,13 @@ public class JdbcBreweryDao implements breweryDao{
 
     @Override
     public Brewery getBreweryByName(String name) {
-        return null;
+        Brewery brewery = new Brewery();
+        String sqlGetBreweryByName = "SELECT * FROM brewery WHERE UPPER(name) = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBreweryByName, name);
+        if(results.next()){
+            brewery = mapRowToBrewery(results);
+        }
+        return brewery;
     }
 
     private Brewery mapRowToBrewery(SqlRowSet rs) {

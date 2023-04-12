@@ -4,11 +4,9 @@ import com.techelevator.dao.beersDao;
 import com.techelevator.dao.breweryDao;
 import com.techelevator.dao.reviewDao;
 import com.techelevator.model.Beer;
+import com.techelevator.model.Brewery;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 //@PreAuthorize("permitAll")
@@ -30,4 +28,21 @@ public class BeerController {
         return listOfBeer;
     }
 
+    @RequestMapping(path="/beers/{id}", method = RequestMethod.GET)
+    public Beer getBeerById(@PathVariable int id, Beer beer){
+        Beer thisBeer = beerDAO.getBeerById(id);
+        return thisBeer;
+    }
+
+    @RequestMapping(path="/beers/name={name}", method = RequestMethod.GET)
+    public Beer getBeerByName(@PathVariable String name, Beer beer){
+        Beer thisBeer = beerDAO.getBeerByName(name);
+        return thisBeer;
+    }
+
+    @RequestMapping(path="/beers/breweryId={id}", method = RequestMethod.GET)
+    public List<Beer> getBeerByBreweryId(@PathVariable int id){
+        List<Beer> listOfBeer = beerDAO.getBeerByBreweryId(id);
+        return listOfBeer;
+    }
 }

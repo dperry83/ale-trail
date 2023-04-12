@@ -8,6 +8,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Locale;
 
 //@PreAuthorize("permitAll")
 @CrossOrigin
@@ -30,9 +31,14 @@ public class BreweryController {
     }
 
     @RequestMapping(path="/breweries/{id}", method = RequestMethod.GET)
-    public Brewery getBrewery(@PathVariable int id, Brewery brewery){
+    public Brewery getBreweryById(@PathVariable int id, Brewery brewery){
         Brewery thisBrewery = breweryDAO.getBreweryById(id);
         return thisBrewery;
+    }
 
+    @RequestMapping(path="/breweries/name={name}", method = RequestMethod.GET)
+    public Brewery getBreweryByName(@PathVariable String name){
+        Brewery thisBrewery = breweryDAO.getBreweryByName(name.toUpperCase());
+        return thisBrewery;
     }
 }

@@ -19,7 +19,7 @@ public class Beer {
         this.beerId = beerId;
     }
 
-    public long getBrewerId() {
+    public long getBreweryId() {
         return breweryId;
     }
 
