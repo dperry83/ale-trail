@@ -14,7 +14,8 @@
                 <img src=" ../public/beer-67.gif" />
             </div>
             <tbody>
-                <tr v-for="item in breweries" v-bind:key="item.brewery_id">
+                <tr v-for="item in breweries" v-bind:key="item.brewery_id" > 
+                    
                     <td> {{ item.name }} </td>
                     <td> {{ item.history }} </td>
                     <td> {{ item.address }} </td>

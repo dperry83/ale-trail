@@ -75,7 +75,7 @@ const router = new Router({
         }
     },
       {
-        path: "/:id",
+        path: "/breweries/:id",
         name: "finerdetails",
         component: FinerDetails
       }
