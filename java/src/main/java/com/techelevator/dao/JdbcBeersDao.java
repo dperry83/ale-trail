@@ -90,7 +90,7 @@ public class JdbcBeersDao implements beersDao{
     @Override
     public Beer getBeerByName(String name) {
         Beer beer = new Beer();
-        String sqlGetBeerByName = "SELECT * FROM beer WHERE name = ?;";
+        String sqlGetBeerByName = "SELECT * FROM beer WHERE UPPER(name) = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBeerByName, name);
         if(results.next()){
             beer = mapRowToBeer(results);

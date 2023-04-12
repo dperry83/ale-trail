@@ -36,7 +36,7 @@ public class BeerController {
 
     @RequestMapping(path="/beers/name={name}", method = RequestMethod.GET)
     public Beer getBeerByName(@PathVariable String name, Beer beer){
-        Beer thisBeer = beerDAO.getBeerByName(name);
+        Beer thisBeer = beerDAO.getBeerByName(name.toUpperCase());
         return thisBeer;
     }
 

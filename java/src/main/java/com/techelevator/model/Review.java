@@ -7,6 +7,7 @@ public class Review {
     private long reviewId;
     private long userId;
     private long breweryId;
+    private long beerId;
     private String reviewText;
     private Date date;
     private int rating;
@@ -66,5 +67,13 @@ public class Review {
 
     public void setForBeer(boolean forBeer) {
         isForBeer = forBeer;
+    }
+
+    public long getBeerId() {
+        return beerId;
+    }
+
+    public void setBeerId(long beerId) {
+        this.beerId = beerId;
     }
 }
