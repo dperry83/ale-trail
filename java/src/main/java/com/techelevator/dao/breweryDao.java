@@ -12,9 +12,11 @@ public interface breweryDao {
 
     void deleteBrewery(long breweryId);
 
-    void updateBrewery(Brewery brewery);
+    boolean updateBrewery(Brewery brewery);
 
     Brewery getBreweryById(long breweryId);
+
+    Brewery getBreweryByName(String name);
 
 
 }
