@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <img id="logo" src="logo_thumbnail.png" alt="da logo">
-        <h2 class="tagline">Embark on the Ale Trail</h2>
+        <h2 class="tagline">ALE TRAIL</h2>
         <div id="nav">
             
             <router-link v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;&nbsp;|&nbsp;
@@ -19,12 +19,18 @@ export default {
 
 <style>
 
-#logo {
-    display: inline;
-}
+#logo,
 .tagline {
-    display: inline;
+display: inline-block;
+vertical-align: middle;
+color: #062851;
+font-size: 30px;
 }
+
+.tagline {
+    margin-left: 10px;
+}
+
 #nav {
     text-align: end;
 }
