@@ -8,6 +8,7 @@
 import ListAllBreweries from '../components/ListAllBreweries.vue'
 
 export default {
+    // name given to ListAllBreweries component
     name: 'AllBreweries',
     components: {
         ListAllBreweries

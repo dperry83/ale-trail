@@ -7,5 +7,8 @@ const http = axios.create({
 export default {
     getAllBeers() {
         return http.get('/beers')
+    },
+    getBeersByBrewery(id) {
+        return http.get(`beers/breweryId=${id}`)
     }
 }

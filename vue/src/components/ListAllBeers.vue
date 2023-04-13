@@ -38,8 +38,9 @@ export default {
         }
     },
     created() {
+        // now calls BeersByBrewery, passing this route parameter(id) as an argument
         BeerService
-            .getAllBeers()
+            .getBeersByBrewery(this.$route.params.id)
             .then( response => {
                 this.beers = response.data;
                 this.isLoading = false;

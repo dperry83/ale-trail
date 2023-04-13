@@ -1,6 +1,5 @@
 <template>
     <div class="beers">
-            TEST
         <list-all-beers />
     </div>
 </template>

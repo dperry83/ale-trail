@@ -14,9 +14,11 @@
                 <img src=" ../public/beer-67.gif" />
             </div>
             <tbody>
-                <tr v-for="item in breweries" v-bind:key="item.brewery_id" > 
-                    
-                    <td> {{ item.name }} </td>
+                <tr v-for="item in breweries" 
+                    v-bind:key="item.breweryId"> 
+                    <!-- links to finerdetails, using this breweryId as a parameter -->
+                    <router-link v-bind:to="{ name: 'finerdetails', params: {id: item.breweryId} }"> 
+                        {{ item.name }} </router-link>
                     <td> {{ item.history }} </td>
                     <td> {{ item.address }} </td>
                     <td> {{ item.phone }} </td>
@@ -37,6 +39,7 @@ export default {
             isLoading: true,
         }
     },
+    // calls BreweryService and populates data {breweries} w/ info at that endpoint
     created() {
         BreweryService
             .getAllBreweries()
@@ -60,7 +63,5 @@ td {
     padding-right: 10px;
     vertical-align: top;
 }
-tr:nth-child(even) {
-    background-color: rgb(238, 238, 238);
-}
+
 </style>

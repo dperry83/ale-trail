@@ -1,17 +1,18 @@
 <template>
     <div class="finerdetails">
-    
-    <brewery-details />
+    <!-- displays ListAllBeers component, now refactored to 
+         display beers by breweryId -->
+    <list-all-beers />
     </div>
 </template>
 
 <script>
-import BreweryDetails from '../components/BreweryDetails.vue'
+import ListAllBeers from '../components/ListAllBeers.vue'
 
 export default {
-    name: 'AllBreweryDetails',
+    name: 'beers-by-brewery',
     components: {
-        BreweryDetails
+        ListAllBeers
     }
 }
 </script>
