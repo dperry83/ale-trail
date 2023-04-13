@@ -1,0 +1,8 @@
+* {
+    background: rgb(212, 170, 75);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#logo{
+    height: auto;
+    max-width: 75px;
+}

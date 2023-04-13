@@ -13,4 +13,8 @@
     background: rgb(6,40,81);
   background: linear-gradient(0deg, rgba(6,40,81,1) 44%, rgba(200,133,44,1) 78%);
   }
+
+  #nav {
+    text-align: end;
+  }
 </style>
