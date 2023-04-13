@@ -15,7 +15,7 @@ public interface beersDao {
 
     Beer getBeerById(long beerId);
 
-    boolean updateBeer(Beer beer);
+    boolean updateBeer(Beer beer, long id);
 
     List<Beer> getBeerByBreweryId(long breweryId);
 

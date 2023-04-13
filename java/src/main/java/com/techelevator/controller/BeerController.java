@@ -45,4 +45,20 @@ public class BeerController {
         List<Beer> listOfBeer = beerDAO.getBeerByBreweryId(id);
         return listOfBeer;
     }
+
+    @RequestMapping(path="/beers", method =RequestMethod.POST)
+    public void addBeer(@RequestBody Beer beer) {
+        beerDAO.addBeer(beer);
+    }
+
+    @RequestMapping(path="/beers/{id}", method = RequestMethod.PUT)
+    public boolean updateBeer(@RequestBody Beer beer, @PathVariable long id) {
+        beerDAO.updateBeer(beer, id);
+                return true;
+    }
+
+    @RequestMapping(path="/beers/{id}", method = RequestMethod.DELETE)
+    public void deleteBeer(@PathVariable long beerId) {
+        beerDAO.deleteBeer(beerId);
+    }
 }

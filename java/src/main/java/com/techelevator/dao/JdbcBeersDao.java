@@ -59,13 +59,13 @@ public class JdbcBeersDao implements beersDao{
     }
 
     @Override
-    public boolean updateBeer(Beer beer) {
+    public boolean updateBeer(Beer beer, long id) {
         String sqlUpdateBeer = "UPDATE beers SET brewery_id = ?,name = ?, " +
                 "description = ?, abv = ?, beer_type = ? " +
                 "WHERE beer_id = ?;";
         try {
             jdbcTemplate.update(sqlUpdateBeer, beer.getBreweryId(), beer.getName(),
-                    beer.getDescription(), beer.getAbv(), beer.getBeerType(), beer.getBeerId());
+                    beer.getDescription(), beer.getAbv(), beer.getBeerType(), id);
         }catch(DataIntegrityViolationException e){
             sqlUpdateBeer = "ROLLBACK;";
             jdbcTemplate.update(sqlUpdateBeer);

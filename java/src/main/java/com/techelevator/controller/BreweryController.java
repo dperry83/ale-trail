@@ -41,4 +41,20 @@ public class BreweryController {
         Brewery thisBrewery = breweryDAO.getBreweryByName(name.toUpperCase());
         return thisBrewery;
     }
+
+    @RequestMapping(path="/breweries/{id}", method = RequestMethod.DELETE)
+    public void deleteBrewery(@PathVariable long breweryId){
+        breweryDAO.deleteBrewery(breweryId);
+    }
+    @RequestMapping(path="/breweries", method = RequestMethod.POST)
+    public void addBrewery(@RequestBody Brewery brewery) {
+        breweryDAO.addBrewery(brewery);
+    }
+
+    @RequestMapping(path="/breweries/{id}", method = RequestMethod.PUT)
+    public boolean updateBrewery( @RequestBody Brewery brewery, @PathVariable long id) {
+        breweryDAO.updateBrewery(brewery, id);
+        return true;
+    }
+
 }

@@ -43,4 +43,14 @@ public class ReviewController {
         List<Review> ListOfReviewForBrewery = reviewDAO.getReviewsForBreweryByName(name.toUpperCase());
         return ListOfReviewForBrewery;
     }
+
+    @RequestMapping(path="/review", method=RequestMethod.POST)
+    public void addReview(@RequestBody Review review) {
+        reviewDAO.addReview(review);
+    }
+
+    @RequestMapping(path="/review/{reviewId}", method = RequestMethod.DELETE)
+    public void deleteReview(@PathVariable long reviewId) {
+        reviewDAO.deleteReview(reviewId);
+    }
 }
