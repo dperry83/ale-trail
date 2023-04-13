@@ -8,7 +8,7 @@ export default {
     getAllBreweries() {
         return http.get('/breweries')
     },
-    getAllBeers(id) {
+    getBreweryDetails(id) {
         return http.get(`/breweries/${ id }`)
     }
 }
