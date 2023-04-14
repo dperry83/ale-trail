@@ -5,7 +5,7 @@ const http = axios.create({
 })
 
 export default {
-    saveNewReview() {
-        return http.post(`/review`)
+    saveNewReview(review) {
+        return http.post(`/review`, review)
     }
 }
