@@ -25,7 +25,7 @@
             <input type="checkbox" name="forBeer" v-model="review.forBeer"/>Yes
         </div>
         <div class="actions">
-            <button type="submit" v-on:click="saveReview()">Save Review</button>
+            <button type="submit" v-on:click.prevent="saveReview()">Save Review</button>
         </div>
 
     </form>
@@ -55,13 +55,14 @@ export default {
               .saveNewReview(this.review)
               .then( response => {
                   if(response.status === 201) {
-                      this.$router.push(`/beers/breweries/breweryId=${this.review.breweryId}`)
+                      this.$router.push(`/beers/breweryId=${this.review.breweryId}`);
+                      console.log("review successfully added");
                   }
               })
         },
         setDate() {
             const today = new Date();
-            return today.toDateString();
+            return today.toISOString().substr(0,10);
         }
     }
 }

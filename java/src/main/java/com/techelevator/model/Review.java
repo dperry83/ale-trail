@@ -8,7 +8,7 @@ public class Review {
     private long userId;
     private long breweryId;
     private long beerId;
-    private String reviewText;
+    private String text;
     private Date date;
     private int rating;
     private boolean isForBeer;
@@ -37,12 +37,12 @@ public class Review {
         this.breweryId = breweryId;
     }
 
-    public String getReviewText() {
-        return reviewText;
+    public String getText() {
+        return text;
     }
 
-    public void setReviewText(String reviewText) {
-        this.reviewText = reviewText;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public Date getDate() {

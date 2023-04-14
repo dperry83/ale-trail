@@ -44,10 +44,10 @@ CREATE TABLE beers (
 
 CREATE TABLE reviews (
     review_id SERIAL PRIMARY KEY,
-    user_id INT NOT NULL,
-    brewery_id INT NOT NULL,
+    user_id INT,
+    brewery_id INT,
     beer_id INT,
-    review_text TEXT,
+    text TEXT,
     date DATE NOT NULL,
     rating INT NOT NULL,
 	is_for_beers BOOLEAN NOT NULL,
