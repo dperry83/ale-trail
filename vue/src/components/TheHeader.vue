@@ -4,9 +4,9 @@
         <h2 class="tagline">ALE TRAIL</h2>
         <div id="nav" >
             
-            <router-link v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;&nbsp;|&nbsp;
-            <router-link id="brew" to="/breweries">View All Breweries</router-link> &nbsp;&nbsp;|&nbsp;
-            <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+            <router-link id="headerHome" v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;&nbsp;|&nbsp;
+            <router-link id="brew" to="/breweries">View All Breweries</router-link> &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <router-link id="logoutHeader" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
             
             
         </div>
@@ -43,6 +43,36 @@ font-weight: bolder;
 }
 
 #nav {
-    text-align: end;
+    display: inline-block;
+    margin-top:30px;
+    float: right;
 }
+
+#logoutHeader {
+border: 1px solid black;
+background: black;
+background-clip: padding-box;
+color: white;
+padding: 2px 20px;
+border-radius: 10px;
+}
+
+#headerHome {
+border: 1px solid black;
+background: black;
+background-clip: padding-box;
+color: white;
+padding: 2px 20px;
+border-radius: 10px;
+}
+
+#brew {
+border: 1px solid black;
+background: black;
+background-clip: padding-box;
+color: white;
+padding: 2px 20px;
+border-radius: 10px;
+}
+
 </style>
