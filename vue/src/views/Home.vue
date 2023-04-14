@@ -5,26 +5,30 @@
   
     <div class="image-container"> 
     <img class="homepic" src="HP1.png" alt="da hp">
+
+    <h3>Highlighted Beer of the Month<br> Lakes & Legends "Vibe Czech"</h3>
+    <img class="highlightbeer" src="highlightedbeer.jpg" alt="hlbeer">
     </div>
+    <the-footer />
   </div>
 </template>
 
 <script>
+import TheFooter from '../components/TheFooter.vue';
 import TheHeader from '../components/TheHeader.vue'
 
 export default {
   name: "home",
   components: {
-    TheHeader
+    TheHeader,
+    TheFooter
   }
 };
 </script>
 
 <style scoped>
 .image-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+ 
   height: 100vh;
 }
 
@@ -32,6 +36,14 @@ export default {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+.highlightbeer {
+  display: flex;
+  margin-top: 15px;
+  max-height: 20%;
+  border: 8px solid #062851;
+  
+  
 }
 
 </style>

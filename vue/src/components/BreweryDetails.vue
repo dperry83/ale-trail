@@ -64,11 +64,9 @@ export default {
 <style scoped> 
 
 .info {
-  /* display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; */
-  display: flex; 
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  
 
   
   gap: 40px;
