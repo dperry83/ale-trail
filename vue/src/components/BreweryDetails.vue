@@ -78,7 +78,6 @@ export default {
 .name {
   text-align: center;
   padding-top: 20px;
-  background-color: white;
 }
 /* currently applies to every div inside .info block */
 .info > .contact, .name, .hours {

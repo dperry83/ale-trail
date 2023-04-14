@@ -4,10 +4,10 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Review {
-    private long reviewId;
-    private long userId;
-    private long breweryId;
-    private long beerId;
+    private int reviewId;
+    private int userId;
+    private int breweryId;
+    private int beerId;
     private String text;
     private Date date;
     private int rating;
@@ -17,7 +17,7 @@ public class Review {
         return reviewId;
     }
 
-    public void setReviewId(long reviewId) {
+    public void setReviewId(int reviewId) {
         this.reviewId = reviewId;
     }
 
@@ -25,7 +25,7 @@ public class Review {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -33,7 +33,7 @@ public class Review {
         return breweryId;
     }
 
-    public void setBreweryId(long breweryId) {
+    public void setBreweryId(int breweryId) {
         this.breweryId = breweryId;
     }
 
@@ -61,7 +61,7 @@ public class Review {
         this.rating = rating;
     }
 
-    public boolean isForBeer() {
+    public boolean getisForBeer() {
         return isForBeer;
     }
 
@@ -73,7 +73,7 @@ public class Review {
         return beerId;
     }
 
-    public void setBeerId(long beerId) {
+    public void setBeerId(int beerId) {
         this.beerId = beerId;
     }
 }

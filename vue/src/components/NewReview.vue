@@ -2,15 +2,15 @@
     <form >
         <div class="field">
             <label for="userId">UserId</label>
-            <input type="number" name="userId" v-model="review.user"/>
+            <input type="number" name="userId" v-model="review.userId"/>
         </div> 
         <div class="field">
             <label for="brewery">Brewery ID</label>
-            <input type="number" name="brewery" v-model="review.brewery" />
+            <input type="number" name="brewery" v-model="review.breweryId" />
         </div>
         <div classs="field">
             <label for="beer">Beer</label>
-            <input type="number" name="beer" v-model="review.beer" />
+            <input type="number" name="beer" v-model="review.beerId" />
         </div>
         <div class="field">
             <label for="review">Review Text</label>
@@ -22,7 +22,7 @@
         </div>
         <div class="field">
             <label for="forBeer">Is this a beer review? </label>
-            <input type="checkbox" name="forBeer" v-model="review.forBeer"/>Yes
+            <input type="checkbox" name="forBeer" v-model="review.isForBeer"/>Yes
         </div>
         <div class="actions">
             <button type="submit" v-on:click.prevent="saveReview()">Save Review</button>
@@ -39,13 +39,13 @@ export default {
     data() {
         return {
             review: {
-                user: 0,
-                brewery: 0,
-                beer: 0,
+                userId: 0,
+                breweryId: 0,
+                beerId: 0,
                 text: '',
                 date: this.setDate(),
                 rating: 0,
-                forBeer: false
+                isForBeer: false
             }
         }
     },

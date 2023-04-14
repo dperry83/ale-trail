@@ -18,8 +18,8 @@
                 <tr v-for="item in beers" v-bind:key="item.beers_id">
                     <td> {{ item.name }} </td>
                     <td> {{ item.description }} </td>
-                    <td> {{ item.abv }} </td>
-                    <td> {{ item.beer_type }} </td>
+                    <td> {{ item.abv }}% </td>
+                    <td> {{ item.beerType }} </td>
                 </tr>
             </tbody>
         </table>
