@@ -19,7 +19,7 @@
       <!-- hours: right 1/3 of page -->
       <div class="hours">
         <h2>Hours</h2>
-        <p> {{ brewery.hoursDaysOperation }} </p>
+        <p> {{ dailyHours(brewery.hoursDaysOperation) }} </p>
       </div>
 
     </div>
@@ -50,8 +50,14 @@ export default {
       .then(response => {
       this.brewery = response.data;
     });
+  },
+  methods: {
+    dailyHours(string) {
+      const daily = string.split(/\n/);
+        return daily;
+      }
+    }
   }
-}
 </script>
 
 <style scoped> 
