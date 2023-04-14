@@ -44,8 +44,8 @@ public class JdbcReviewDao implements reviewDao{
 
     @Override
     public void addReview(Review review) {
-        String sqlAddReview = "INSERT INTO reviews(date, review_text, rating) VALUES(?,?,?);";
-        jdbcTemplate.update(sqlAddReview, review.getDate(), review.getReviewText(), review.getRating());
+        String sqlAddReview = "INSERT INTO reviews(date, text, rating) VALUES(?,?,?);";
+        jdbcTemplate.update(sqlAddReview, review.getDate(), review.getText(), review.getRating());
     }
 
     @Override
@@ -85,7 +85,7 @@ public class JdbcReviewDao implements reviewDao{
         review.setUserId(rs.getInt("user_id"));
         review.setBreweryId(rs.getInt("brewery_id"));
         review.setBeerId(rs.getInt("beer_id"));
-        review.setReviewText(rs.getString("review_text"));
+        review.setText(rs.getString("review_text"));
         review.setDate(rs.getDate("date"));
         review.setForBeer(rs.getBoolean("is_for_beer"));
         return review;
