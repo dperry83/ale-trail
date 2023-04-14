@@ -46,7 +46,7 @@ CREATE TABLE reviews (
     review_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
     brewery_id INT NOT NULL,
-    beer_id INT NOT NULL,
+    beer_id INT,
     review_text TEXT,
     date DATE NOT NULL,
     rating INT NOT NULL,

@@ -1,0 +1,72 @@
+<template>
+    <form >
+        <div class="field">
+            <label for="userId">UserId</label>
+            <input type="number" name="userId" v-model="review.user"/>
+        </div> 
+        <div class="field">
+            <label for="brewery">Brewery ID</label>
+            <input type="number" name="brewery" v-model="review.brewery" />
+        </div>
+        <div classs="field">
+            <label for="beer">Beer</label>
+            <input type="number" name="beer" v-model="review.beer" />
+        </div>
+        <div class="field">
+            <label for="review">Review Text</label>
+            <textarea name="review" rows="4" cols="40" v-model="review.text"></textarea>
+        </div>
+        <div class="field">
+            <label for="rating">Your Rating (1 thru 5) </label>
+            <input type="number" min="1" max="5" v-model="review.rating" />
+        </div>
+        <div class="field">
+            <label for="forBeer">Is this a beer review? </label>
+            <input type="checkbox" name="forBeer" v-model="review.forBeer"/>Yes
+        </div>
+        <div class="actions">
+            <button type="submit" v-on:click="saveReview()">Save Review</button>
+        </div>
+
+    </form>
+</template>
+
+<script>
+import ReviewService from '../services/ReviewService';
+
+export default {
+    name: 'new-review',
+    data() {
+        return {
+            review: {
+                user: 0,
+                brewery: 0,
+                beer: 0,
+                text: '',
+                date: this.setDate(),
+                rating: 0,
+                forBeer: false
+            }
+        }
+    },
+    methods: {
+        saveReview() {
+            ReviewService
+              .saveNewReview(this.review)
+              .then( response => {
+                  if(response.status === 201) {
+                      this.$router.push(`/beers/breweries/breweryId=${this.review.breweryId}`)
+                  }
+              })
+        },
+        setDate() {
+            const today = new Date();
+            return today.toDateString();
+        }
+    }
+}
+</script>
+
+<style scoped>
+
+</style>
