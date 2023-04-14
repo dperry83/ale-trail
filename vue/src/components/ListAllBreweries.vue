@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="breweryTable">
         <table>
             <thead>
                 <tr>
@@ -17,8 +17,8 @@
                 <tr v-for="item in breweries" 
                     v-bind:key="item.breweryId"> 
                     <!-- links to finerdetails, using this breweryId as a parameter -->
-                    <router-link v-bind:to="{ name: 'finerdetails', params: {id: item.breweryId} }"> 
-                        {{ item.name }} </router-link>
+                    <td><router-link v-bind:to="{ name: 'finerdetails', params: {id: item.breweryId} }"> 
+                        {{ item.name }} </router-link></td>
                     <td> {{ item.history }} </td>
                     <td> {{ item.address }} </td>
                     <td> {{ item.phone }} </td>
@@ -51,17 +51,28 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 table {
     width: 80%;
     margin-left: 10%;
+    
 }
 th, td {
-    text-align: center;
+    text-align: center; 
+    border: 1px solid black;
+    padding: 13px 10px;
 }
 td {
     padding-right: 10px;
     vertical-align: top;
 }
+
+div#breweryTable{
+   padding-top: 30px;
+}
+
+
+
+
 
 </style>

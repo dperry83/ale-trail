@@ -1,10 +1,8 @@
 <template>
   <div class="home">
     <the-header />
-    <div class="routers" >
-       <div style="height: 30px; width: 100%; background-color:  rgba(6,40,81,255); color: white;">
-    </div>
-    </div>
+    
+  
     <div class="image-container"> 
     <img class="homepic" src="HP1.png" alt="da hp">
     </div>

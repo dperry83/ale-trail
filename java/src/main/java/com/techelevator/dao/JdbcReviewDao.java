@@ -57,7 +57,7 @@ public class JdbcReviewDao implements reviewDao{
     @Override
     public List<Review> getReviewsForBeerByName(String name) {
         List<Review> allReviews = new ArrayList<>();
-        String sqlSelectAllReviews = "SELECT * FROM reviews WHERE UPPER(name) = ?;";
+        String sqlSelectAllReviews = "SELECT * FROM reviews JOIN beers ON reviews.beer_id = beers.beer_id WHERE UPPER(beer.name) = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews, name);
 
         while(results.next()) {
@@ -70,7 +70,7 @@ public class JdbcReviewDao implements reviewDao{
     @Override
     public List<Review> getReviewsForBreweryByName(String name) {
         List<Review> allReviews = new ArrayList<>();
-        String sqlSelectAllReviews = "SELECT * FROM reviews WHERE UPPER(name) = ?;";
+        String sqlSelectAllReviews = "SELECT * FROM reviews JOIN brewery ON reviews.brewery_id = brewery.brewery_id WHERE UPPER(brewery.name) = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews, name);
 
         while(results.next()) {

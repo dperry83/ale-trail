@@ -2,13 +2,16 @@
     <div class="header">
         <img id="logo" src="logo_thumbnail.png" alt="da logo">
         <h2 class="tagline">ALE TRAIL</h2>
-        <div id="nav">
+        <div id="nav" >
             
             <router-link v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;&nbsp;|&nbsp;
             <router-link id="brew" to="/breweries">View All Breweries</router-link> &nbsp;&nbsp;|&nbsp;
             <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
             
+            
         </div>
+
+        <div style="height: 30px; width: 100%; background-color:  rgba(6,40,81,255); color: white;"/>
         
     
     </div>
@@ -22,6 +25,8 @@ export default {
 </script>
 
 <style>
+
+
 
 #logo,
 .tagline {

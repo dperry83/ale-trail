@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="beersTable">
         <table>
             <thead>
                 <tr>
@@ -49,19 +49,26 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 table {
-    width: 80%;
-    margin-left: 10%;
+    width: auto;
+    margin: auto;
+    border-collapse: collapse;
+    padding: 10px 30px 10px 15px;
+    ;
+    
 }
 th, td {
     text-align: center;
+    border: 1px solid black;
+    padding: 13px 10px;
 }
 td {
     padding-right: 10px;
     vertical-align: top;
 }
-tr:nth-child(even) {
-    background-color: rgb(238, 238, 238);
+
+div#beersTable {
+    padding-top: 25px;
 }
 </style>

@@ -64,8 +64,13 @@ export default {
 <style scoped> 
 
 .info {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; */
+  display: flex; 
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  
   gap: 40px;
   padding-top: 20px;
   padding-left: 20px;
@@ -80,6 +85,8 @@ export default {
 /* currently applies to every div inside .info block */
 .info > .contact, .name, .hours {
   border:black 1px solid;
+
+
 }
 #day {
   line-height: 5px;
