@@ -8,6 +8,7 @@ import store from '../store/index'
 import Breweries from '../views/Breweries.vue'
 import Beers from '../views/Beers.vue'
 import FinerDetails from '../views/FinerDetails.vue'
+import TestReview from '../views/TestReview.vue'
 
 Vue.use(Router)
 
@@ -78,6 +79,11 @@ const router = new Router({
         path: "/beers/breweryId=:id",
         name: "finerdetails",
         component: FinerDetails
+      },
+      {
+        path: "/review",
+        name: "testreview",
+        component: TestReview
       }
   ]
 })
