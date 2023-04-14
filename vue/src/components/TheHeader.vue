@@ -9,7 +9,10 @@
             <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
             
         </div>
+        
+    
     </div>
+    
 </template>
 
 <script> 
@@ -26,10 +29,12 @@ display: inline-block;
 vertical-align: middle;
 color: #062851;
 font-size: 30px;
+font-weight: bolder;
 }
 
 .tagline {
     margin-left: 10px;
+    
 }
 
 #nav {
