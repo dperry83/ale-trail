@@ -19,7 +19,8 @@
       <!-- hours: right 1/3 of page -->
       <div class="hours">
         <h2>Hours</h2>
-        <p> {{ dailyHours(brewery.hoursDaysOperation) }} </p>
+        <!-- this is a hot mess of code, but it works! -->
+        <p v-for="day in dailyHours(brewery.hoursDaysOperation)" v-bind:key="day" id="day"> {{ day }} </p>
       </div>
 
     </div>
@@ -79,6 +80,9 @@ export default {
 /* currently applies to every div inside .info block */
 .info > .contact, .name, .hours {
   border:black 1px solid;
+}
+#day {
+  line-height: 5px;
 }
 
 
