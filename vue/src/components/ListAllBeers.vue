@@ -10,9 +10,11 @@
                 </tr>
             </thead>
 
+
              <div class="loading" v-if="isLoading">
                 <img src=" ../public/beer-67.gif" />
             </div>
+
 
             <tbody>
                 <tr v-for="item in beers" v-bind:key="item.beers_id">
@@ -26,8 +28,10 @@
     </div>
 </template>
 
+
 <script>
 import BeerService from '../services/BeerService';
+
 
 export default {
     name: 'beer-list',
@@ -49,6 +53,7 @@ export default {
 }
 </script>
 
+
 <style scoped>
 table {
     width: auto;
@@ -56,7 +61,7 @@ table {
     border-collapse: collapse;
     padding: 10px 30px 10px 15px;
     ;
-    
+   
 }
 th, td {
     text-align: center;
@@ -68,7 +73,10 @@ td {
     vertical-align: top;
 }
 
+
 div#beersTable {
     padding-top: 25px;
 }
+
+
 </style>
