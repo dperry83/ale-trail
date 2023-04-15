@@ -1,9 +1,10 @@
 <template>
   <div>
 
+
     <!-- .info currently holds all the component details  -->
     <div class="info">
-      
+     
       <!-- contact info: left 1/3 of page -->
       <div class="contact">
         <h2>Contact Us</h2>
@@ -11,11 +12,12 @@
         <h5 id="address"> {{ brewery.address }} </h5>
       </div>
 
+
       <!-- linked name: middle 1/3 of page -->
       <div class="name">
         <a :href="brewery.website" target="_blank"> {{brewery.name}} </a>
       </div>
-      
+     
       <!-- hours: right 1/3 of page -->
       <div class="hours">
         <h2>Hours</h2>
@@ -23,22 +25,17 @@
         <p v-for="day in dailyHours(brewery.hoursDaysOperation)" v-bind:key="day" id="day"> {{ day }} </p>
       </div>
 
-      <div class="review">
-        <BreweryReviews :breweryId="brewery.breweryId" />
-      </div>
 
     </div>
   </div>
 </template>
 
+
 <script>
 import BreweryService from '../services/BreweryService'
-import BreweryReviews from "./BreweryReviews.vue"
+
 
 export default {
-  components:{
-    BreweryReviews,
-  },
   name: 'brewery-details',
   data() {
     return {
@@ -69,15 +66,20 @@ export default {
   }
 </script>
 
-<style scoped> 
+
+<style scoped>
+
 
 .info {
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr;
-  
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+  grid-template-columns: repeat(3, 30%);
+ 
 
-  
-  gap: 40px;
+
+  gap: 20px;
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 30px;
@@ -92,9 +94,23 @@ export default {
   border:black 1px solid;
 
 
+
+
 }
+
+
+.contact, .name, .hours {
+  padding: 1px 40px;
+}
+
+
 #day {
   line-height: 5px;
+}
+
+
+.info >div {
+  max-width: 300px;
 }
 
 
