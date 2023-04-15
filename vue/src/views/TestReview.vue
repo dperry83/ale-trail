@@ -1,6 +1,6 @@
 <template>
     <div class="review">
-        <h1>TEST</h1>
+        <h1>Reviews</h1>
         <new-review />
     </div>
 </template>
@@ -18,5 +18,7 @@ export default {
 </script>
 
 <style scoped>
-
+h1{
+    text-align: center;
+}
 </style>

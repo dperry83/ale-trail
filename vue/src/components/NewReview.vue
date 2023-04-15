@@ -1,33 +1,51 @@
 <template>
-    <form >
+    <form>
+
         <div class="field">
             <label for="userId">UserId</label>
             <input type="number" name="userId" v-model="review.userId"/>
-        </div> 
+        </div>
+
         <div class="field">
-            <label for="brewery">Brewery ID</label>
-            <input type="number" name="brewery" v-model="review.breweryId" />
+            <label for="brewery">Brewery</label>
+            <select name="brewery" v-model="review.breweryId" v-on:change="filterBeers">
+                <option disabled value="">Please select a brewery</option>
+                <option value="0">None</option>
+                <option v-for="brewery in breweries" :key="brewery.breweryId" :value="brewery.breweryId">
+                {{ brewery.name }}
+                </option>
+            </select>
         </div>
-        <div classs="field">
+
+        <div class="field">
             <label for="beer">Beer</label>
-            <input type="number" name="beer" v-model="review.beerId" />
+            <select name="beer" v-model="review.beerId">
+                <option disabled value="">Please select a beer</option>
+                <option value="0">None</option>
+                <option v-for="beer in filteredBeers" :key="beer.beerId" :value="beer.beerId">
+                {{ beer.name }}
+                </option>
+            </select>
         </div>
+
         <div class="field">
             <label for="review">Review Text</label>
             <textarea name="review" rows="4" cols="40" v-model="review.text"></textarea>
         </div>
+
         <div class="field">
             <label for="rating">Your Rating (1 thru 5) </label>
             <input type="number" min="1" max="5" v-model="review.rating" />
         </div>
-        <div class="field">
+
+        <!-- <div class="field">
             <label for="forBeer">Is this a beer review? </label>
             <input type="checkbox" name="forBeer" v-model="review.isForBeer"/>Yes
-        </div>
+        </div> -->
+
         <div class="actions">
             <button type="submit" v-on:click.prevent="saveReview()">Save Review</button>
         </div>
-
     </form>
 </template>
 
@@ -45,27 +63,59 @@ export default {
                 text: '',
                 date: this.setDate(),
                 rating: 0,
-                isForBeer: false
-            }
+                isForBeer: true
+            },
+            breweries: [],
+            beers: [],
+            filteredBeers: []
         }
     },
+
+    mounted() {
+        ReviewService
+            .getAllBeers().then(response => {
+                this.beers = response.data.sort((a, b) => a.name.localeCompare(b.name));
+            });
+        ReviewService
+            .getAllBreweries().then(response => {
+                this.breweries = response.data.sort((a, b) => a.name.localeCompare(b.name));
+            });
+    },
+
     methods: {
         saveReview() {
             ReviewService
               .saveNewReview(this.review)
-              .then( response => {
+              .then(response => {
                   if(response.status === 201) {
                       this.$router.push(`/beers/breweryId=${this.review.breweryId}`);
-                      console.log("review successfully added");
+                      console.log("review added");
                   }
               })
         },
         setDate() {
             const today = new Date();
             return today.toISOString().substr(0,10);
-        }
+        },
+        filterBeers() {
+    if (this.review.breweryId === 0) {
+        // Display all beers when they choose none
+        this.filteredBeers = this.beers;
+    } else {
+        // Filter the beers when a brewery is selected
+        this.filteredBeers = this.beers.filter(beer => beer.breweryId === this.review.breweryId);
     }
+    
+    // If no beers are filtered, display all beers
+    if (this.filteredBeers.length === 0) {
+        this.filteredBeers = this.beers;
+    }
+    
+    // Reset the selected beer to none
+    this.review.beerId = 0;
 }
+}}
+
 </script>
 
 <style scoped>
