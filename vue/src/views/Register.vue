@@ -90,4 +90,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+#register{
+  border: 1px solid black;
+  width: 900px;
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+ 
+}
+</style>

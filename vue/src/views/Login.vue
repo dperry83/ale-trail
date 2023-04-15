@@ -1,6 +1,8 @@
 <template>
   <div id="login" class="text-center">
+    
     <form class="form-signin" @submit.prevent="login">
+      <img id="logo" src="logo_thumbnail.png" alt="da logo">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
         class="alert alert-danger"
@@ -12,7 +14,7 @@
         role="alert"
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
+      <label for="username" class="sr-only">Username: &nbsp;</label>
       <input
         type="text"
         id="username"
@@ -22,7 +24,8 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      <br>
+      <label for="password" class="sr-only">Password: &nbsp;&nbsp;</label>
       <input
         type="password"
         id="password"
@@ -31,8 +34,10 @@
         v-model="user.password"
         required
       />
+      <br>
+      <br>
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      <button id="submit" type="submit">Sign in</button>
     </form>
   </div>
 </template>
@@ -74,3 +79,28 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+#logo {
+  
+}
+
+#login{
+  border: 1px solid black;
+  width: 900px;
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+ 
+}
+
+#submit {
+  margin-left: 70px;
+}
+
+
+
+</style>

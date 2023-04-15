@@ -6,7 +6,7 @@
     <div class="image-container"> 
     <img class="homepic" src="HP1.png" alt="da hp">
 
-    <h3>Highlighted Beer of the Month<br> Lakes & Legends "Vibe Czech"</h3>
+    <h3>ALE TRAIL Beer of the Month<br> Lakes & Legends "Vibe Czech"</h3>
     <img class="highlightbeer" src="highlightedbeer.jpg" alt="hlbeer">
     </div>
     <the-footer />
@@ -42,6 +42,7 @@ export default {
   margin-top: 15px;
   max-height: 20%;
   border: 8px solid #062851;
+  border-radius: 10PX;
   
   
 }
