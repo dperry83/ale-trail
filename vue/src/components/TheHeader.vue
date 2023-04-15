@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <img id="logo" src="logo_thumbnail.png" alt="da logo">
+        <img id="logo" src="logo_thumbnail.png">
         <h2 class="tagline">ALE TRAIL</h2>
         <div id="nav" >
             
@@ -46,11 +46,12 @@ font-weight: bolder;
     display: inline-block;
     margin-top:30px;
     float: right;
+    
 }
 
 #logoutHeader {
 border: 1px solid black;
-background: black;
+background: rgba(6,40,81,255);
 background-clip: padding-box;
 color: white;
 padding: 2px 20px;
@@ -59,7 +60,7 @@ border-radius: 10px;
 
 #headerHome {
 border: 1px solid black;
-background: black;
+background: rgba(6,40,81,255);
 background-clip: padding-box;
 color: white;
 padding: 2px 20px;
@@ -68,7 +69,7 @@ border-radius: 10px;
 
 #brew {
 border: 1px solid black;
-background: black;
+background: rgba(6,40,81,255);
 background-clip: padding-box;
 color: white;
 padding: 2px 20px;

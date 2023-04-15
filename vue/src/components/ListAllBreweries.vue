@@ -11,7 +11,7 @@
             </thead>
 
             <div class="loading" v-if="isLoading">
-                <img src=" ../public/beer-67.gif" />
+                <img src="beer-67.gif" />
             </div>
             <tbody>
                 <tr v-for="item in breweries" 
