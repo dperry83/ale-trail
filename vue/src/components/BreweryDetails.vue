@@ -23,14 +23,22 @@
         <p v-for="day in dailyHours(brewery.hoursDaysOperation)" v-bind:key="day" id="day"> {{ day }} </p>
       </div>
 
+      <div class="review">
+        <BreweryReviews :breweryId="brewery.breweryId" />
+      </div>
+
     </div>
   </div>
 </template>
 
 <script>
 import BreweryService from '../services/BreweryService'
+import BreweryReviews from "./BreweryReviews.vue"
 
 export default {
+  components:{
+    BreweryReviews,
+  },
   name: 'brewery-details',
   data() {
     return {

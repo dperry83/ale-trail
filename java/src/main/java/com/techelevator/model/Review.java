@@ -61,11 +61,11 @@ public class Review {
         this.rating = rating;
     }
 
-    public boolean getisForBeer() {
+    public boolean getIsForBeer() {
         return isForBeer;
     }
 
-    public void setForBeer(boolean forBeer) {
+    public void setIsForBeer(boolean forBeer) {
         isForBeer = forBeer;
     }
 

@@ -15,5 +15,9 @@ export default {
 
     getAllBreweries() {
         return http.get(`/breweries`)
-    }
+    }, 
+
+    getReviewByBreweryId(breweryId) {
+        return http.get(`/review/` + breweryId);
+      },
 }

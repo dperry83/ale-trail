@@ -26,7 +26,7 @@ public class ReviewController {
         return ListOfReviewForBeer;
     }
 
-    @RequestMapping(path="/review/breweries/{id}", method = RequestMethod.GET)
+    @RequestMapping(path="/review/{id}", method = RequestMethod.GET)
     public List<Review> getReviewByBreweryId(@PathVariable int id){
         List<Review> ListOfReviewForBrewery = reviewDAO.getReviewsForBreweryById(id);
         return ListOfReviewForBrewery;
