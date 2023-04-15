@@ -1,21 +1,27 @@
 <template>
   <div class="home">
     <the-header />
-    
-  
-    <div class="image-container"> 
+   
+ 
+    <div class="image-container">
     <img class="homepic" src="HP1.png" alt="da hp">
-
-    <h3>ALE TRAIL Beer of the Month<br> Lakes & Legends "Vibe Czech"</h3>
+    <div class="beer-award">
+    <div class="beer-text">
+    <h3>ALE TRAIL Beer of the Month</h3>
+    <h4> Lakes & Legends "Vibe Czech"</h4>
+    </div>
     <img class="highlightbeer" src="highlightedbeer.jpg" alt="hlbeer">
+    </div>
     </div>
     <the-footer />
   </div>
 </template>
 
+
 <script>
 import TheFooter from '../components/TheFooter.vue';
 import TheHeader from '../components/TheHeader.vue'
+
 
 export default {
   name: "home",
@@ -26,26 +32,67 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .image-container {
  
-  height: 100vh;
+  overflow: hidden;
+  padding-bottom: 20px;
+ 
+
+
 }
+
 
 .homepic {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
-.highlightbeer {
-  display: flex;
-  margin-top: 15px;
-  max-height: 20%;
-  border: 8px solid #062851;
-  border-radius: 10PX;
-  
-  
+
+
+.beer-text{
+  margin-left: 4.5%;
+  margin-top: 2%;
 }
 
+
+h3 {
+  display: inline;
+  border: 1px solid black;
+  background: rgba(6,40,81,255);
+  background-clip: padding-box;
+  color: white;
+  padding: 2px 20px;
+  border-radius: 5px;
+
+
+
+
+}
+h4 {
+  display: block;
+  margin-top: 10px;
+  margin-left: 30px;
+
+
+}
+
+
+.highlightbeer {
+  align-self: flex-end;
+  margin-left: 5%;
+  max-width: 600px;
+  max-height: 350px;
+  border: 10px solid #062851;
+  border-radius: 10px;
+ 
+ 
+}
+
+
 </style>
+
+
+
 
