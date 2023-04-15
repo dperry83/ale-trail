@@ -14,6 +14,10 @@ public class User {
    private String password;
    @JsonIgnore
    private boolean activated;
+   private String name;
+   private String city;
+   private String state;
+   private String zip;
    private Set<Authority> authorities = new HashSet<>();
 
    public User() { }
@@ -64,6 +68,38 @@ public class User {
 
    public void setAuthorities(Set<Authority> authorities) {
       this.authorities = authorities;
+   }
+
+   public String getName() {
+      return name;
+   }
+
+   public void setName(String name) {
+      this.name = name;
+   }
+
+   public String getCity() {
+      return city;
+   }
+
+   public void setCity(String city) {
+      this.city = city;
+   }
+
+   public String getState() {
+      return state;
+   }
+
+   public void setState(String state) {
+      this.state = state;
+   }
+
+   public String getZip() {
+      return zip;
+   }
+
+   public void setZip(String zip) {
+      this.zip = zip;
    }
 
    public void setAuthorities(String authorities) {
