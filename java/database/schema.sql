@@ -57,7 +57,7 @@ CREATE TABLE reviews (
 );
 
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Surly Brewing Co', 'https://surlybrewing.com/wp-content/uploads/2021/06/2019-09-14-Surly-Beer-Hall-Darin-Kamnetz-150-1.jpg', 'n/a', 'https://surlybrewing.com/', 'Tuesday	3–9 PM
+VALUES ('Surly Brewing Co', 'https://surlybrewing.com/wp-content/uploads/2021/06/2019-09-14-Surly-Beer-Hall-Darin-Kamnetz-150-1.jpg', 'A proudly independent craft brewery for 17 years, Surly relentlessly pursues craft beer perfection with a full roster of year-round and seasonal beers', 'https://surlybrewing.com/', 'Tuesday	3–9 PM
 Wednesday	3–9 PM
 Thursday	3–9 PM
 Friday	3–11 PM
@@ -65,7 +65,7 @@ Saturday	11 AM–11 PM
 Sunday	10 AM–4 PM
 Monday	Closed', '520 Malcolm Ave SE', '7635353330');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Uteplis Brewing', 'https://utepilsbrewing.com/wp-content/uploads/2017/12/utp-map-web-1024x414.jpg', 'n/a', 'https://utepilsbrewing.com/', 'Tuesday	3–10 PM
+VALUES ('Uteplis Brewing', 'https://utepilsbrewing.com/wp-content/uploads/2017/12/utp-map-web-1024x414.jpg', 'Utepils is a neo-traditional brewery that embraces brewing and serving authentic European-style lagers and ales.', 'https://utepilsbrewing.com/', 'Tuesday	3–10 PM
 Wednesday	3–10 PM
 Thursday	3–10 PM
 Friday	12–10 PM
@@ -73,15 +73,15 @@ Saturday	11 AM–10 PM
 Sunday	11 AM–8 PM
 Monday	3–10 PM', '225 Thomas Ave N #700', '6122497800');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Modist Brewing Co', 'https://modistbrewing.com/wp-content/uploads/2016/04/DanicaDonnellyPhotography_160330_5w.jpg', 'n/a', 'https://modistbrewing.com/', 'Tuesday	4–10 PM
+VALUES ('Modist Brewing Co', 'https://modistbrewing.com/wp-content/uploads/2016/04/DanicaDonnellyPhotography_160330_5w.jpg', 'Modist, located in the North Loop neighborhood of Minneapolis, aims to modify beer and how it is perceived by defying rules and expectations.', 'https://modistbrewing.com/', 'Tuesday	4–10 PM
 Wednesday	4–10 PM
 Thursday	4–10 PM
 Friday	12 PM–12 AM
 Saturday	12 PM–12 AM
 Sunday	12–8 PM
-Monday	4–10 PM', '505 N 3rd S', '6124540258');
+Monday	4–10 PM', '505 N 3rd St', '6124540258');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Dangerous Man Brewing Company', 'https://dangerousmanbrewing.com/', 'n/a', 'https://dangerousmanbrewing.com/', 'Tuesday	4–10 PM
+VALUES ('Dangerous Man Brewing Company', 'https://dangerousmanbrewing.com/', 'A destination microbrewery and taproom located in NE Minneapolis focused on high-quality, small-batch production beers with ever-changing taps.', 'https://dangerousmanbrewing.com/', 'Tuesday	4–10 PM
 Wednesday	4–10 PM
 Thursday	4–10 PM
 Friday	12–11 PM
@@ -89,7 +89,7 @@ Saturday	12–11 PM
 Sunday	1–7 PM
 Monday	Closed', '1300 NE 2nd St', '6122597283');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Pryes Brewing', 'https://images.squarespace-cdn.com/content/v1/593d53f75016e1368cc27242/936342dc-275e-4715-990d-2a6ef0d98fe9/Pryes-Coin-Black-Gold.png?format=1500w', 'n/a', 'https://www.pryesbrewing.com/', 'Tuesday	11 AM–11 PM
+VALUES ('Pryes Brewing', 'https://images.squarespace-cdn.com/content/v1/593d53f75016e1368cc27242/936342dc-275e-4715-990d-2a6ef0d98fe9/Pryes-Coin-Black-Gold.png?format=1500w', 'Pryes (pronounced "prize") takes its time to focus on brewing one batch at a time in the Near North neighborhood of Minneapolis.', 'https://www.pryesbrewing.com/', 'Tuesday	11 AM–11 PM
 Wednesday	11 AM–11 PM
 Thursday	11 AM–12 AM
 Friday	11 AM–12 AM
@@ -97,7 +97,7 @@ Saturday	11 AM–12 AM
 Sunday	11 AM–10 PM
 Monday	11 AM–11 PM', '1401 West River Rd N', '6123548041');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('The Freehouse', 'https://images.squarespace-cdn.com/content/v1/5f58dcab66bbca192c9f937f/1610134429744-RRX6LW47TK57ECQVV2F6/DSC_3939+%281%29.JPG?format=500w', 'n/a', 'https://www.freehousempls.com/', 'Tuesday	11 AM–10 PM
+VALUES ('The Freehouse', 'https://images.squarespace-cdn.com/content/v1/5f58dcab66bbca192c9f937f/1610134429744-RRX6LW47TK57ECQVV2F6/DSC_3939+%281%29.JPG?format=500w', 'Freehouse serves its own beer side-by-side with its competitors, and prides itself on the selection of ingredients and quality of its brewmasters and chefs.', 'https://www.freehousempls.com/', 'Tuesday	11 AM–10 PM
 Wednesday	11 AM–10 PM
 Thursday	11 AM–12 AM
 Friday	11 AM–12 AM
@@ -105,7 +105,7 @@ Saturday	8 AM–12 AM
 Sunday	8 AM–10 PM
 Monday	11 AM–11 PM', '701 N Washington Ave #101', '6123397011');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Eastlake Craft Brewery', 'https://images.squarespace-cdn.com/content/v1/532ca6dfe4b0f59c2979a1c2/26bfc548-3230-40c9-983f-9f3d8c9f318c/Eastlake+Labels+2023+Cream.png?format=1500w', 'n/a', 'https://eastlakemgm.com/', 'Tuesday	11:30 AM–10 PM
+VALUES ('Eastlake Craft Brewery', 'https://images.squarespace-cdn.com/content/v1/532ca6dfe4b0f59c2979a1c2/26bfc548-3230-40c9-983f-9f3d8c9f318c/Eastlake+Labels+2023+Cream.png?format=1500w', 'Founded in 2014 by a former Minneapolis city bus operator, Eastlake is focused on brewing original hop-heavy ales, award-winning sours, and modern malty styles.', 'https://eastlakemgm.com/', 'Tuesday	11:30 AM–10 PM
 Wednesday	11:30 AM–10 PM
 Thursday	11:30 AM–10 PM
 Friday	11:30 AM–10 AM
@@ -113,7 +113,7 @@ Saturday	11:30 AM–10 PM
 Sunday	11:30 AM–10 PM
 Monday	11:30 AM–10 PM', '920 E Lake St #123', '6126660422');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Day Block Brewing Company', 'https://dbbc-tickets-22041300-production.s3.us-east-1.amazonaws.com/wp-content/uploads/2023/03/21222353/DayBlockBrewingLogo-3.png', 'n/a', 'https://www.dayblockbrewing.com/', 'Tuesday	4 PM–10 PM
+VALUES ('Day Block Brewing Company', 'https://dbbc-tickets-22041300-production.s3.us-east-1.amazonaws.com/wp-content/uploads/2023/03/21222353/DayBlockBrewingLogo-3.png', 'Named after the 140-year-old building it calls home, Day Block honors its past with beers named after entrepreneurs who once conducted business there.', 'https://www.dayblockbrewing.com/', 'Tuesday	4 PM–10 PM
 Wednesday	4 PM–10 PM
 Thursday	4 PM–10 PM
 Friday	12:00 PM–11 PM
@@ -121,7 +121,7 @@ Saturday	12 AM–11 PM
 Sunday	11 AM–8 PM
 Monday	6 PM–11 PM', '1105 S Washington Ave', '6126177793');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Finnegans', 'https://finnegans.org/wp-content/uploads/2021/11/Group-37.png', 'n/a', 'https://finnegans.org/', 'Tuesday	4 PM–9 PM
+VALUES ('Finnegans', 'https://finnegans.org/wp-content/uploads/2021/11/Group-37.png', 'Born in 2018 in the Elliot Park neighborhood of Minneapolis, Finnegans has produced more than 100 beers that can be sampled in the taproom.', 'https://finnegans.org/', 'Tuesday	4 PM–9 PM
 Wednesday	4 PM–9 PM
 Thursday	3 PM–9 PM
 Friday	3 PM–9 PM
@@ -129,7 +129,7 @@ Saturday	2 PM–9 PM
 Sunday	Closed
 Monday	Closed', '817 S 5th Ave', '6122083374');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Fulton Beer', 'https://upload.wikimedia.org/wikipedia/en/1/1f/Fulton_Beer_Logo.png', 'n/a', 'https://www.fultonbeer.com/', 'Tuesday	3 PM–10 PM
+VALUES ('Fulton Beer', 'https://upload.wikimedia.org/wikipedia/en/1/1f/Fulton_Beer_Logo.png', 'Fulton has grown from a garage in South Minneapolis to one of the fastest growing breweries in the Midwest.', 'https://www.fultonbeer.com/', 'Tuesday	3 PM–10 PM
 Wednesday	11 AM–10 PM
 Thursday	3 PM–10 PM
 Friday	3 PM–11 PM
@@ -137,7 +137,7 @@ Saturday	12 PM–11 PM
 Sunday	12 PM–8 PM
 Monday	11 AM–1O PM', '414 N 6th Ave', '6123333208');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Headflyer Brewing', 'https://www.headflyerbrewing.com/img/logo/logo.svg', 'n/a', 'https://www.headflyerbrewing.com/', 'Tuesday	4 PM–10 PM
+VALUES ('HeadFlyer Brewing', 'https://www.headflyerbrewing.com/img/logo/logo.svg', 'HeadFlyer has a vision to create a variety of beer that will cater to every beer drinker’s needs and a taproom that is warm, friendly and welcoming.', 'https://www.headflyerbrewing.com/', 'Tuesday	4 PM–10 PM
 Wednesday	4 PM–10 PM
 Thursday	4 PM–10 PM
 Friday	2 PM–12 AM
@@ -145,7 +145,7 @@ Saturday	12 PM–12 AM
 Sunday	12 PM–8 PM
 Monday	4 PM–10 PM', '861 E Hennepin Ave #200', '6125676345');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Inbound Brew Co', 'https://images.squarespace-cdn.com/content/v1/56f4b7fc171107751285357c/1571670901612-93IQFQONP03IXH8RY6Y0/Inbound+BrewCo+Wordmark+White.png?format=1500w', 'n/a', 'https://inboundbrew.co/', 'Tuesday	12 PM–11 PM
+VALUES ('Inbound Brew Co', 'https://images.squarespace-cdn.com/content/v1/56f4b7fc171107751285357c/1571670901612-93IQFQONP03IXH8RY6Y0/Inbound+BrewCo+Wordmark+White.png?format=1500w', 'A dog-friendly craft brewery and taproom in the city’s North Loop with German beer hall-style seating.', 'https://inboundbrew.co/', 'Tuesday	12 PM–11 PM
 Wednesday	11 AM–11 PM
 Thursday	12 PM–11 PM
 Friday	12 PM–12 AM
@@ -153,7 +153,7 @@ Saturday	11 AM–12 AM
 Sunday	11 AM–11 PM
 Monday	12 PM–11 PM', '701 N 5th St, Minneapolis', '6122940375');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Indeed Brewing Company', 'https://www.indeedbrewing.com/assets/images/indeed-logo.png', 'n/a', 'https://www.indeedbrewing.com/', 'Tuesday	3 PM–11 PM
+VALUES ('Indeed Brewing Company', 'https://www.indeedbrewing.com/assets/images/indeed-logo.png', 'Indeed aims to cultivate an artfully eclectic lineup of beers from the heart of Minneapolis and Milwaukee.', 'https://www.indeedbrewing.com/', 'Tuesday	3 PM–11 PM
 Wednesday	3 PM–11 PM
 Thursday	3 PM–11 PM
 Friday	11 AM–12 AM
@@ -161,7 +161,7 @@ Saturday	11 AM–12 AM
 Sunday	11 AM–9 PM
 Monday	3 PM–11 PM', '711 NE 15th Ave', '6128435090');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Insight Brewing', 'https://static.wixstatic.com/media/c3925a_4c455c40f8d74e56ab98a26e8c2cb741~mv2.jpg/v1/fill/w_978,h_518,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c3925a_4c455c40f8d74e56ab98a26e8c2cb741~mv2.jpg', 'n/a', 'https://www.insightbrewing.com/', 'Tuesday	3 PM–11 PM
+VALUES ('Insight Brewing', 'https://static.wixstatic.com/media/c3925a_4c455c40f8d74e56ab98a26e8c2cb741~mv2.jpg/v1/fill/w_978,h_518,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c3925a_4c455c40f8d74e56ab98a26e8c2cb741~mv2.jpg', 'Insight prides itself on making consistently drinkable, full-flavored beer to fit any mood or occasion.', 'https://www.insightbrewing.com/', 'Tuesday	3 PM–11 PM
 Wednesday	3 PM–11 PM
 Thursday	3 PM–11 PM
 Friday	3 PM–12 AM
@@ -169,7 +169,7 @@ Saturday	1 PM–12 AM
 Sunday	1 PM–11 PM
 Monday	3 PM–11 PM', '2821 E Hennepin Ave', '6127227222');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('La Dona Cerveceria', 'https://dbbc-tickets-22041300-production.s3.us-east-1.amazonaws.com/wp-content/uploads/2023/03/21222353/DayBlockBrewingLogo-3.png', 'n/a', 'https://dameladona.com/', 'Tuesday	4 PM–11 PM
+VALUES ('La Dona Cerveceria', 'https://dbbc-tickets-22041300-production.s3.us-east-1.amazonaws.com/wp-content/uploads/2023/03/21222353/DayBlockBrewingLogo-3.png', 'A unique brewery, taproom and entertainment space in the Harrison neighborhood of Minneapolis that fuses Latin culture and The North.', 'https://dameladona.com/', 'Tuesday	4 PM–11 PM
 Wednesday	4 PM–11 PM
 Thursday	4 PM–11 PM
 Friday	3 PM–11 PM
@@ -177,7 +177,7 @@ Saturday	12 PM–2 AM
 Sunday	12 PM–8 PM
 Monday	Closed', '241 Fremont Ave N', '6123154613');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Lakes & Legends Brewing Co', 'https://static.wixstatic.com/media/351255_1271603fc1a0481187013127ade9466c~mv2.png/v1/fill/w_117,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/raptor-w.png', 'n/a', 'https://www.lakesandlegends.com/', 'Tuesday	3 PM–10 PM
+VALUES ('Lakes & Legends Brewing Co', 'https://static.wixstatic.com/media/351255_1271603fc1a0481187013127ade9466c~mv2.png/v1/fill/w_117,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/raptor-w.png', 'Lakes & Legends prioritizes local farming partners as often as possible, celebrating local flavors from Minnesota Grown ingredients.', 'https://www.lakesandlegends.com/', 'Tuesday	3 PM–10 PM
 Wednesday	Closed
 Thursday	3 PM–10 PM
 Friday	2 PM–11 PM
@@ -185,7 +185,7 @@ Saturday	12 AM–11 PM
 Sunday	11 AM–10 PM
 Monday	3 PM–10 PM', '1368 Lasalle Ave', '6129996020');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('LynLake Brewery', 'https://images.squarespace-cdn.com/content/v1/53518407e4b0a1a3d8a5d31a/1399912971353-Q9PSPZGABXTISLCNY21B/LL_Brew_New.png?format=1500w', 'n/a', 'https://www.lynlakebrewery.com/', 'Tuesday	5 PM–10 PM
+VALUES ('LynLake Brewery', 'https://images.squarespace-cdn.com/content/v1/53518407e4b0a1a3d8a5d31a/1399912971353-Q9PSPZGABXTISLCNY21B/LL_Brew_New.png?format=1500w', 'LynLake gave new life to the century-old, neoclassical Lyndale Theater in Uptown Minneapolis in 2014, transforming it into a taproom with rooftop seating.', 'https://www.lynlakebrewery.com/', 'Tuesday	5 PM–10 PM
 Wednesday	5 PM–10 PM
 Thursday	5 PM–10 PM
 Friday	4 PM–12 AM
@@ -193,7 +193,7 @@ Saturday	12 PM–12 AM
 Sunday	12 AM–10 PM
 Monday	5 PM–10 PM', '2934 Lyndale Ave S', '6122249682');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Town Hall Brewery', 'https://static.spotapps.co/web/townhallbrewery--com/custom/logo.png', 'n/a', 'https://townhallbrewery.com/', 'Tuesday	12 PM–9 PM
+VALUES ('Town Hall Brewery', 'https://static.spotapps.co/web/townhallbrewery--com/custom/logo.png', 'Town Hall has crafted beer at Seven Corners in Minneapolis since 1997, racking up more medals at the Great American Beer Festival than any other Minnesota brewery along the way.', 'https://townhallbrewery.com/', 'Tuesday	12 PM–9 PM
 Wednesday	12 PM–9 PM
 Thursday	12 PM–10 PM
 Friday	12 PM–10 PM
@@ -201,7 +201,7 @@ Saturday	12 AM–10 PM
 Sunday	12 AM–9 PM
 Monday	12 PM–9 PM', '1430 S Washington Ave', '6123398696');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Venn Brewing', 'https://www.vennbrewing.com/wp-content/uploads/2021/10/venn_web_logo-01-1-980x980.png', 'n/a', 'https://www.vennbrewing.com/', 'Tuesday	8 AM–10 PM
+VALUES ('Venn Brewing', 'https://www.vennbrewing.com/wp-content/uploads/2021/10/venn_web_logo-01-1-980x980.png', 'Venn, which means "friend" in Norwegian, is a neighborhood taproom and coffee shop serving award-winning craft beer and excellent coffee.', 'https://www.vennbrewing.com/', 'Tuesday	8 AM–10 PM
 Wednesday	8 AM–10 PM
 Thursday	8 AM–10 PM
 Friday	8 AM–11 PM
@@ -209,7 +209,7 @@ Saturday	8 AM–11 PM
 Sunday	8 AM–9 PM
 Monday	4 PM–10 PM', '3550 E 46th St Suite 140', '6128878366');
 INSERT INTO brewery (name, image, history, website, hours_days_operation, address, phone)
-VALUES ('Wild Mind Ales', 'https://images.squarespace-cdn.com/content/v1/583d8d0ee3df281220ae3a4c/1594826065891-A7CCCMIY2B401OL5DZYV/WMA_HOME_1.png?format=2500w', 'n/a', 'https://www.wildmindales.com/', 'Tuesday	4 PM–9 PM
+VALUES ('Wild Mind Ales', 'https://images.squarespace-cdn.com/content/v1/583d8d0ee3df281220ae3a4c/1594826065891-A7CCCMIY2B401OL5DZYV/WMA_HOME_1.png?format=2500w', 'Wild Minds harvests yeast strains from around Minnesota to create wild, sour, farmhouse, saison, and other rustic-style ales through aging, blending, and mixed-fermentation.', 'https://www.wildmindales.com/', 'Tuesday	4 PM–9 PM
 Wednesday	4 PM–9 PM
 Thursday	4 PM–9 PM
 Friday	2 PM–10 PM
@@ -269,11 +269,11 @@ VALUES
 ((SELECT brewery_id FROM brewery WHERE name = 'Fulton Beer'), 'Chill City Chugger', 'A beer that tastes like...wait for it...beer.', 4.0, 'Golden Lager'),
 ((SELECT brewery_id FROM brewery WHERE name = 'Fulton Beer'), 'Northern Standard', 'A genuine all-malt beer, made from 2-row barley malt, American hops, and pilsner yeast.', 4.5, 'Amber Lager'),
 ((SELECT brewery_id FROM brewery WHERE name = 'Fulton Beer'), '300', 'Built on a base of pilsner malt and heavily hopped with Mosaic, this West Coast IPA was so well received, we had to make it available year-round.', 7.0, 'Mosaic IPA'),
-((SELECT brewery_id FROM brewery WHERE name = 'Headflyer Brewing'), 'Crunch Time', 'This Citrus Wheat Ale is bursting with orange citrus flavor, so no garnish is required.', 5.2, 'Citrus Wheat Ale'),
-((SELECT brewery_id FROM brewery WHERE name = 'Headflyer Brewing'), 'Prolific', 'Prolific amounts of Centennial, Columbus, and Chinook hops to get your chill on.', 6.0, 'West Coast IPA'),
-((SELECT brewery_id FROM brewery WHERE name = 'Headflyer Brewing'), 'Wicked Jump Shot', 'This Hazy Pale Ale features Mosaic and Amarillo hops to impart a mix of berry and citrus fruit flavors.', 5.4, 'Pale Ale'),
-((SELECT brewery_id FROM brewery WHERE name = 'Headflyer Brewing'), 'Candy Paint', 'Vic Secret and Citra hops give it sweet, candy-like hop flavors.', 5.9, 'DDH Hazy IPA'),
-((SELECT brewery_id FROM brewery WHERE name = 'Headflyer Brewing'), 'It Was All A Dream', 'We kicked up the hop flavor of our flagship hazy IPA by doing a double dry hop of Citra and El Dorado.', 7.2, 'Juicy IPA'),
+((SELECT brewery_id FROM brewery WHERE name = 'HeadFlyer Brewing'), 'Crunch Time', 'This Citrus Wheat Ale is bursting with orange citrus flavor, so no garnish is required.', 5.2, 'Citrus Wheat Ale'),
+((SELECT brewery_id FROM brewery WHERE name = 'HeadFlyer Brewing'), 'Prolific', 'Prolific amounts of Centennial, Columbus, and Chinook hops to get your chill on.', 6.0, 'West Coast IPA'),
+((SELECT brewery_id FROM brewery WHERE name = 'HeadFlyer Brewing'), 'Wicked Jump Shot', 'This Hazy Pale Ale features Mosaic and Amarillo hops to impart a mix of berry and citrus fruit flavors.', 5.4, 'Pale Ale'),
+((SELECT brewery_id FROM brewery WHERE name = 'HeadFlyer Brewing'), 'Candy Paint', 'Vic Secret and Citra hops give it sweet, candy-like hop flavors.', 5.9, 'DDH Hazy IPA'),
+((SELECT brewery_id FROM brewery WHERE name = 'HeadFlyer Brewing'), 'It Was All A Dream', 'We kicked up the hop flavor of our flagship hazy IPA by doing a double dry hop of Citra and El Dorado.', 7.2, 'Juicy IPA'),
 ((SELECT brewery_id FROM brewery WHERE name = 'Inbound Brew Co'), 'Contains Bees: Peanut Butter Honey Blonde', 'A refreshing blonde ale with creamy peanut butter and sweet Minnesota honey.', 5.2, 'Blonde Ale'),
 ((SELECT brewery_id FROM brewery WHERE name = 'Inbound Brew Co'), 'Raspberry Jam Bam', 'A bright and smooth blonde ale that is perfectly complemented by the addition of bold raspberry.', 5.4, 'Raspberry Blonde Ale'),
 ((SELECT brewery_id FROM brewery WHERE name = 'Inbound Brew Co'), 'Fruit of the Loop', 'Dry hopped with more Citra and Mosaic than your tastebuds can handle to dial up the flavor and bring in the pleasant sweetness of tropical fruit.', 6.4, 'West Coast IPA'),
