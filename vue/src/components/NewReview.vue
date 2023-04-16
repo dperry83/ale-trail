@@ -1,10 +1,10 @@
 <template>
     <form>
 
-        <div class="field">
+        <!-- <div class="field">
             <label for="userId">UserId</label>
             <input type="number" name="userId" v-model="review.userId"/>
-        </div>
+        </div> -->
 
         <div class="field">
             <label for="brewery">Brewery</label>
@@ -57,9 +57,11 @@ export default {
     data() {
         return {
             review: {
-                userId: 0,
-                breweryId: 0,
-                beerId: 0,
+                // assigns the current logged-in username to the review
+                username: this.$store.state.user.username,
+                // assigns the brewery based on the route id for its brewery
+                breweryId: this.$route.params.id,
+                beerId: '',
                 text: '',
                 date: this.setDate(),
                 rating: 0,

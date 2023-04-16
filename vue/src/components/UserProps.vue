@@ -9,8 +9,12 @@
 
 export default {
     name: 'user-props',
-    created: {
-        
+    data() {
+        return {
+            user: {
+                username: this.$store.state.user.username
+            }
+        }
     }
 }
 </script>

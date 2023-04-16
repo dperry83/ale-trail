@@ -83,7 +83,10 @@ const router = new Router({
       {
         path: "/review",
         name: "testreview",
-        component: TestReview
+        component: TestReview,
+        meta: {
+          requiresAuth: true
+        }
       }
   ]
 })
