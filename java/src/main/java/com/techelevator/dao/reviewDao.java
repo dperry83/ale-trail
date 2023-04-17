@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 public interface reviewDao {
-    List<Review> getReviewsForBeerById(long beer_id);
+    List<Review> getReviewsForBeerById(int beer_id);
 
-    List<Review> getReviewsForBreweryById(long brewery_id);
+    List<Review> getReviewsForBreweryById(int brewery_id);
 
     void addReview(Review review);
 

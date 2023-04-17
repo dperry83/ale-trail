@@ -1,16 +1,13 @@
 <template>
     <form>
 
-        <!-- <div class="field">
-            <label for="userId">UserId</label>
-            <input type="number" name="userId" v-model="review.userId"/>
-        </div> -->
-
         <div class="field">
             <label for="brewery">Brewery</label>
+            <!-- v-model is used to create two-way data binding between the input value and the data property. Changes to the input value will update the data property and vice versa. -->
             <select name="brewery" v-model="review.breweryId" v-on:change="filterBeers">
                 <option disabled value="">Please select a brewery</option>
                 <option value="0">None</option>
+                <!-- used v-for to loop over brewery and create option for each brewery -->
                 <option v-for="brewery in breweries" :key="brewery.breweryId" :value="brewery.breweryId">
                 {{ brewery.name }}
                 </option>
@@ -22,6 +19,7 @@
             <select name="beer" v-model="review.beerId">
                 <option disabled value="">Please select a beer</option>
                 <option value="0">None</option>
+                <!-- used v-for to loop over beers and create option for each beer -->
                 <option v-for="beer in filteredBeers" :key="beer.beerId" :value="beer.beerId">
                 {{ beer.name }}
                 </option>
@@ -44,7 +42,9 @@
         </div> -->
 
         <div class="actions">
-            <button type="submit" v-on:click.prevent="saveReview()">Save Review</button>
+            <!-- v-on:click.prevent is used to prevent the form from being submitted when save review button is clicked.
+            Also added onclick to reload the page so you could tell the review was sent to the database. visually looks better -->
+            <button type="submit" onclick="window.location.reload();" v-on:click.prevent="saveReview()">Save Review</button>
         </div>
     </form>
 </template>
@@ -88,7 +88,7 @@ export default {
 
     methods: {
         saveReview() {
-            // uses current logged in user and sets user id
+            // uses current logged in user and sets user id from the store
             this.review.userId = this.$store.state.user.id;
 
             ReviewService.saveNewReview(this.review)

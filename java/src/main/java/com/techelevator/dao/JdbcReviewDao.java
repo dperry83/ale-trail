@@ -17,7 +17,7 @@ public class JdbcReviewDao implements reviewDao{
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
     @Override
-    public List<Review> getReviewsForBeerById(long beer_id) {
+    public List<Review> getReviewsForBeerById(int beer_id) {
         List<Review> allReviews = new ArrayList<>();
         String sqlSelectAllReviews = "SELECT * FROM reviews WHERE beer_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews, beer_id);
@@ -30,7 +30,7 @@ public class JdbcReviewDao implements reviewDao{
     }
 
     @Override
-    public List<Review> getReviewsForBreweryById(long brewery_id) {
+    public List<Review> getReviewsForBreweryById(int brewery_id) {
         List<Review> allReviews = new ArrayList<>();
         String sqlSelectAllReviews = "SELECT * FROM reviews WHERE brewery_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews, brewery_id);
@@ -57,7 +57,7 @@ public class JdbcReviewDao implements reviewDao{
     @Override
     public List<Review> getReviewsForBeerByName(String name) {
         List<Review> allReviews = new ArrayList<>();
-        String sqlSelectAllReviews = "SELECT * FROM reviews JOIN beers ON reviews.beer_id = beers.beer_id WHERE UPPER(beer.name) = ?;";
+        String sqlSelectAllReviews = "SELECT * FROM reviews JOIN beers ON reviews.beer_id = beers.beer_id WHERE UPPER(beers.name) = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews, name);
 
         while(results.next()) {
@@ -85,7 +85,7 @@ public class JdbcReviewDao implements reviewDao{
         review.setUserId(rs.getInt("user_id"));
         review.setBreweryId(rs.getInt("brewery_id"));
         review.setBeerId(rs.getInt("beer_id"));
-        review.setText(rs.getString("review_text"));
+        review.setText(rs.getString("text"));
         review.setDate(rs.getDate("date"));
         review.setIsForBeer(rs.getBoolean("is_for_beer"));
         return review;

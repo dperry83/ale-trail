@@ -26,8 +26,8 @@ public class ReviewController {
         return ListOfReviewForBeer;
     }
 
-    @RequestMapping(path="/review/{id}", method = RequestMethod.GET)
-    public List<Review> getReviewByBreweryId(@PathVariable int id){
+    @RequestMapping(path="/review/brewery/{id}", method = RequestMethod.GET)
+    public List<Review> getReviewsForBreweryById(@PathVariable int id){
         List<Review> ListOfReviewForBrewery = reviewDAO.getReviewsForBreweryById(id);
         return ListOfReviewForBrewery;
     }
@@ -38,7 +38,7 @@ public class ReviewController {
         return ListOfReviewForBeer;
     }
 
-    @RequestMapping(path="/review/breweries/name={name}", method = RequestMethod.GET)
+    @RequestMapping(path="/review/brewery/name={name}", method = RequestMethod.GET)
     public List<Review> getReviewForBreweryByName(@PathVariable String name){
         List<Review> ListOfReviewForBrewery = reviewDAO.getReviewsForBreweryByName(name.toUpperCase());
         return ListOfReviewForBrewery;

@@ -5,6 +5,7 @@
       <select name="beer" v-model="review.beerId">
         <option disabled value="">Please select a beer</option>
         <option value="0">None</option>
+        <!-- used v-for to loop over beers and create option for each beer -->
         <option v-for="beer in filteredBeers" :key="beer.beerId" :value="beer.beerId">
           {{ beer.name }}
         </option>
@@ -22,7 +23,7 @@
     </div>
 
     <div class="actions">
-      <button type="submit" v-on:click.prevent="saveReview()">Save Review</button>
+      <button type="submit" onclick="window.location.reload();" v-on:click.prevent="saveReview()">Save Review</button>
     </div>
   </form>
 </template>
@@ -34,7 +35,7 @@ export default {
   name: 'BreweryReviews',
   props: {
     breweryId: {
-      type: String,
+      type: Number,
       required: true
     }
   },
