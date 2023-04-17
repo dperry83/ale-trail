@@ -16,7 +16,7 @@ public class UserController {
         this.userDAO = userDao;
     }
 
-    @RequestMapping(path = "/user/id/{name}", method = RequestMethod.GET)
+    @RequestMapping(path = "/user/id/name={name}", method = RequestMethod.GET)
     public int getIdByUsername(@PathVariable String name) {
         int userId = userDAO.findIdByUsername(name);
         return userId;
@@ -34,7 +34,7 @@ public class UserController {
         return listOfUser;
     }
 
-    @RequestMapping(path = "/user/{name}", method = RequestMethod.GET)
+    @RequestMapping(path = "/user/name={name}", method = RequestMethod.GET)
     public User findByUsername(@PathVariable String name){
         User thisUser = userDAO.findByUsername(name);
         return thisUser;

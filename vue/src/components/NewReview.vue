@@ -100,22 +100,22 @@ export default {
             return today.toISOString().substr(0,10);
         },
         filterBeers() {
-    if (this.review.breweryId === 0) {
-        // Display all beers when they choose none
-        this.filteredBeers = this.beers;
-    } else {
-        // Filter the beers when a brewery is selected
-        this.filteredBeers = this.beers.filter(beer => beer.breweryId === this.review.breweryId);
+        if (this.review.breweryId === 0) {
+            // Display all beers when they choose none
+            this.filteredBeers = this.beers;
+        } else {
+            // Filter the beers when a brewery is selected
+            this.filteredBeers = this.beers.filter(beer => beer.breweryId === this.review.breweryId);
+        }
+        
+        // If no beers are filtered, display all beers
+        if (this.filteredBeers.length === 0) {
+            this.filteredBeers = this.beers;
+        }
+        
+        // Reset the selected beer to none
+        this.review.beerId = 0;
     }
-    
-    // If no beers are filtered, display all beers
-    if (this.filteredBeers.length === 0) {
-        this.filteredBeers = this.beers;
-    }
-    
-    // Reset the selected beer to none
-    this.review.beerId = 0;
-}
 }}
 
 </script>
