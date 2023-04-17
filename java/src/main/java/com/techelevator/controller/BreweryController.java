@@ -46,6 +46,7 @@ public class BreweryController {
     public void deleteBrewery(@PathVariable long breweryId){
         breweryDAO.deleteBrewery(breweryId);
     }
+
     @RequestMapping(path="/breweries", method = RequestMethod.POST)
     public void addBrewery(@RequestBody Brewery brewery) {
         breweryDAO.addBrewery(brewery);

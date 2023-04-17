@@ -30,6 +30,7 @@
 
 <script>
 import ReviewService from '../services/ReviewService';
+import UserService from '../services/UserService';
 
 export default {
   name: 'BreweryReviews',
@@ -42,8 +43,8 @@ export default {
   data() {
     return {
       review: {
-        // assigns the current logged-in username to the review
-        username: this.$store.state.user.username,
+        // will now be populated by the created() property on line 61
+        userId: 0,
         // assigns the brewery based on the route id for its brewery
         breweryId: this.breweryId,
         beerId: '',
@@ -56,6 +57,13 @@ export default {
       beers: [],
       filteredBeers: []
     }
+  },
+  created() {
+    UserService
+      .getUserId(this.$store.state.user.username)
+      .then(response => {
+        this.review.userId = response.data;
+      })
   },
 
   mounted() {
@@ -70,7 +78,7 @@ export default {
   methods: {
     saveReview() {
       // uses current logged in user and sets user id
-      this.review.userId = this.$store.state.user.id;
+      // this.review.userId = this.$store.state.user.id;
 
       ReviewService.saveNewReview(this.review).then(response => {
         if (response.status === 201) {

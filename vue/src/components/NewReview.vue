@@ -57,6 +57,7 @@ export default {
     data() {
         return {
             review: {
+                userId: 0,
                 // assigns the current logged-in username to the review
                 username: this.$store.state.user.username,
                 // assigns the brewery based on the route id for its brewery

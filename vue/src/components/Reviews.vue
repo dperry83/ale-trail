@@ -17,7 +17,9 @@ import ReviewService from "../services/ReviewService";
 
 export default {
   name: "Reviews",
-  props: ["breweryId"],
+  props: {
+    'breweryId': Number
+  },
   data() {
     return {
       reviews: [],

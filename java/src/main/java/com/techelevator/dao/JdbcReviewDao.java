@@ -87,7 +87,7 @@ public class JdbcReviewDao implements reviewDao{
         review.setBeerId(rs.getInt("beer_id"));
         review.setText(rs.getString("text"));
         review.setDate(rs.getDate("date"));
-        review.setIsForBeer(rs.getBoolean("is_for_beer"));
+        review.setIsForBeer(rs.getBoolean("is_for_beers"));
         return review;
     }
 }
