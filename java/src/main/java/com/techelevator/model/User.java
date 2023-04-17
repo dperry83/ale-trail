@@ -18,6 +18,7 @@ public class User {
    private String city;
    private String state;
    private String zip;
+   private String role;
    private Set<Authority> authorities = new HashSet<>();
 
    public User() { }
@@ -28,6 +29,14 @@ public class User {
       this.password = password;
       if(authorities != null) this.setAuthorities(authorities);
       this.activated = true;
+   }
+
+   public String getRole() {
+      return role;
+   }
+
+   public void setRole(String role) {
+      this.role = role;
    }
 
    public int getId() {

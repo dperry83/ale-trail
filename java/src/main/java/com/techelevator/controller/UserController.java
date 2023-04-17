@@ -39,4 +39,10 @@ public class UserController {
         User thisUser = userDAO.findByUsername(name);
         return thisUser;
     }
+
+    @RequestMapping(path = "/user/{id}", method = RequestMethod.PUT)
+    public boolean updateUserRole(String role, @PathVariable int id) {
+        userDAO.updateUserRole(role, id);
+        return true;
+    }
 }

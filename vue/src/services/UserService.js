@@ -11,7 +11,7 @@ export default {
     getUserId(username) {
         return http.get(`user/id/name=${username}`)
     },
-    updateUser(id, user) {
-        return http.put(`/user/${id}`, user)
+    updateUserRole(id, role) {
+        return http.put(`/user/${id}`, role)
     }
 }

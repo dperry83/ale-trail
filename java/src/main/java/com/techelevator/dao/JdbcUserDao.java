@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -80,6 +81,19 @@ public class JdbcUserDao implements UserDao {
         String ssRole = role.toUpperCase().startsWith("ROLE_") ? role.toUpperCase() : "ROLE_" + role.toUpperCase();
 
         return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole, name, city, state, zip) == 1;
+    }
+    @Override
+    public boolean updateUserRole(String role, int id) {
+        String updateUserSql = "UPDATE users " +
+                                "SET role = ? WHERE user_id = ?";
+        try {
+            jdbcTemplate.update(updateUserSql, role, id);
+        }catch(DataIntegrityViolationException e) {
+            updateUserSql = "ROLLBACK;";
+            jdbcTemplate.update(updateUserSql);
+            return false;
+        }
+        return true;
     }
 
     private User mapRowToUser(SqlRowSet rs) {

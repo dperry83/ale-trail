@@ -1,5 +1,6 @@
 <template>
     <div class="users">
+        <div class="all-users">
         <table class="user-table">
             <thead>
                 <tr>
@@ -15,7 +16,8 @@
             </thead>
             <tbody>
                 <tr v-for="user in users" 
-                    v-bind:key="user.id">
+                    v-bind:key="user.id"
+                    >
                     <td> {{ user.id }} </td>
                     <td> {{ user.username }} </td>
                     <td> {{ user.authorities[0].name }} </td>
@@ -23,23 +25,37 @@
                     <td> {{ user.city }} </td>
                     <td> {{ user.state }} </td>
                     <td> {{ user.zip }} </td>
-                   
-                    <td> 
-                        <label for="role-change">Change Role: </label> <br>
+                    <td>
+                        <button 
+                        v-on:click="setActiveUser(user)">Edit User</button>
+                    </td>
+                    
+                        <label for="role-change"
+                            v-if="user.id === activeUser.id">Update Role: </label> <br>
                         <select 
                           name="role-change" 
-                          id="role-dropdown" 
-                          v-model="activeUser.role"                        
+                          id="role-dropdown"       
+                          v-model="activeUser.role"
+                          v-if="user.id === activeUser.id"                  
                           >
                             <option value="none"></option>
                             <option value="ROLE_USER">User</option>
                             <option value="ROLE_BREWER">Brewer</option>
                             <option value="ROLE_ADMIN">Administrator</option>
                         </select>
-                    </td>
+                    
                 </tr>
             </tbody>
         </table>
+        </div>
+        <div class="edit-user">
+            <h3>UPDATE USER PERMISSIONS</h3>
+            <h4>User:  {{ activeUser.name }} </h4>
+            <h4>ID: {{ activeUser.id }} </h4>
+            <h4>username: {{ activeUser.username }} </h4>
+            <h4>New Role: {{ activeUser.role }}</h4>
+            <button @click="changeRole(activeUser)" >Commit Changes</button>
+        </div>
     </div>
 </template>
 
@@ -52,13 +68,16 @@ export default {
         return {
             users: [],
             activeUser: {
-                id: '',
-                username: '',
-                name: '',
+                authorities: [{
+                    name:''
+                }],
+                role: '',
                 city: '',
+                id: '',
+                name: '',
                 state: '',
-                zip: '',
-                role: ''
+                username: '',
+                zip: ''
             }
         }
     },
@@ -70,25 +89,18 @@ export default {
             })
     },
     methods: {
-        changeRole() {
-            
-            // const user = {
-            //     id: this.user.id,
-            //     username: this.user.username,
-            //     name: this.user.name,
-            //     city: this.user.city,
-            //     state: this.user.state,
-            //     zip: this.user.zip,
-            //     role: newRole
-            // };
+        changeRole(activeUser) {
             UserService
-                .updateUser()
+                .updateUserRole(activeUser.id, activeUser.role)
                 .then( response => {
                     if(response.status === 200) {
-                        this.$router.push('/admin')
+                        console.log("update successful!")
                     }
                 })
-    }
+        },
+        setActiveUser(user) {
+            this.activeUser = user
+        }
 }
 }
 </script>
