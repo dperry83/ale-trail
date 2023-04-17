@@ -17,7 +17,7 @@
 
 
             <tbody>
-                <tr v-for="item in beers" v-bind:key="item.beers_id">
+                <tr v-for="item in beers" v-bind:key="item.beer_id">
                     <td> {{ item.name }} </td>
                     <td> {{ item.description }} </td>
                     <td> {{ item.abv }}% </td>

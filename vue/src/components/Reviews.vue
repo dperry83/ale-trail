@@ -4,8 +4,11 @@
     <div v-if="reviews.length === 0">
       No reviews available for this brewery.
     </div>
+
+    <!-- cycle through each review in the list of reviews to pull up -->
     <div v-for="review in reviews" :key="review.id">
-      <h3>{{ review.username }} - Rating: {{ review.rating }}</h3>
+      <h3>{{ review.username }} - Rating: {{ review.rating }}     </h3>
+      <h6>Date: {{review.date}}</h6>
       <p>{{ review.text }}</p>
       <hr />
     </div>
@@ -17,6 +20,8 @@ import ReviewService from "../services/ReviewService";
 
 export default {
   name: "Reviews",
+
+  // passing brewery id from parent to this component
   props: {
     'breweryId': Number
   },
@@ -26,11 +31,13 @@ export default {
     };
   },
   created() {
+    //use the fetch reviews to get reviews for specific brewery on creation of this component
     this.fetchReviews();
   },
   methods: {
     async fetchReviews() {
       try {
+        //getting brewery id 
         const response = await ReviewService.getReviewsForBreweryById(this.breweryId);
         this.reviews = response.data;
       } catch (error) {
@@ -42,5 +49,5 @@ export default {
 </script>
 
 <style scoped>
-  /* Your styles... */
+  
 </style>
