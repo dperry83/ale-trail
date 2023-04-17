@@ -18,9 +18,9 @@
           autofocus
         />
       </div>
-      
+      <br>
       <div class="password-input">
-        <label for="password" class="sr-only">Password: </label>
+        <label for="password" class="sr-only">Password: &nbsp;</label>
         <!-- input type "password" is what makes the letters disappear when typing! -->
         <input
           type="password"
@@ -30,7 +30,8 @@
           v-model="user.password"
           required
         /><br>
-        <input
+        <br>
+       <input
           type="password"
           id="confirmPassword"
           class="form-control"
@@ -39,7 +40,7 @@
           required
         />
       </div>
-
+      <br>
       <div class="personal-info">
         <label for="name">Full Name: </label>
         <input 
@@ -51,7 +52,7 @@
           required
           />
       </div>
-
+      <br>
       <div class="location">
         <label for="home-city">Home City: </label>
           <input 
@@ -62,6 +63,7 @@
             v-model="user.city"
             required
             /> 
+            <br>
             <br>
         <label for="home-state">Home State: </label>
           <select 
@@ -130,7 +132,8 @@
             required
             />
             <br> -->
-        <label for="home-zip">Zip: </label>
+            <br><br>
+        <label for="home-zip"> Zip: </label>
           <input 
             type="text"
             id="zip"
@@ -142,7 +145,7 @@
       </div>
         <br>
       
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      <button class="btn btn-lg btn-primary btn-block" type="submit" id="submit">
         Create Account
       </button>
       <br><br>
@@ -209,14 +212,27 @@ export default {
 </script>
 
 <style scoped>
+#submit{
+  background-color:  rgba(6,40,81,255);
+  color: white;
+}
 #register{
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+  /*border: 1px solid black;
   width: 900px;
   height: 600px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
- 
+ */
+}
+
+#confirmPassword.form-control {
+  margin-left: 81px
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <img id="logo" src="logo_thumbnail.png">
+        <img id="logo" src="/logo_thumbnail.png">
         <h2 class="tagline">ALE TRAIL</h2>
         <div id="nav" >
             
@@ -55,7 +55,7 @@ background: rgba(6,40,81,255);
 background-clip: padding-box;
 color: white;
 padding: 2px 20px;
-border-radius: 10px;
+border-radius: 5px;
 }
 
 #headerHome {
@@ -64,7 +64,7 @@ background: rgba(6,40,81,255);
 background-clip: padding-box;
 color: white;
 padding: 2px 20px;
-border-radius: 10px;
+border-radius: 5px;
 }
 
 #brew {
@@ -73,7 +73,7 @@ background: rgba(6,40,81,255);
 background-clip: padding-box;
 color: white;
 padding: 2px 20px;
-border-radius: 10px;
+border-radius: 5px;
 }
 
 </style>
