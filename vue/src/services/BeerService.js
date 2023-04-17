@@ -10,5 +10,11 @@ export default {
     },
     getBeersByBrewery(id) {
         return http.get(`beers/breweryId=${id}`)
+    }, 
+    addBeer(beer) {
+        return http.post('/beers', beer);
+    },
+    deleteBeer(beerId) {
+        return http.delete(`/beers/${beerId}`);
     }
 }

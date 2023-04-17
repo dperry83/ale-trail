@@ -58,7 +58,7 @@ public class BeerController {
     }
 
     @RequestMapping(path="/beers/{id}", method = RequestMethod.DELETE)
-    public void deleteBeer(@PathVariable long beerId) {
-        beerDAO.deleteBeer(beerId);
+    public void deleteBeer(@PathVariable long id) {
+        beerDAO.deleteBeer(id);
     }
 }

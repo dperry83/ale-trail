@@ -50,6 +50,7 @@ export default {
       }
     }
   },
+  //fetch brewery details from brewery service immediately after this component is created.
   created() {
     BreweryService
       .getBreweryDetails(this.$route.params.id)

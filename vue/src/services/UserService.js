@@ -5,7 +5,13 @@ const http = axios.create({
 })
 
 export default {
+    getAllUsers() {
+        return http.get(`/user`)
+    },
     getUserId(username) {
         return http.get(`user/id/name=${username}`)
+    },
+    updateUser(id, user) {
+        return http.put(`/user/${id}`, user)
     }
 }
