@@ -75,10 +75,12 @@ export default {
 
     mounted() {
         ReviewService
+        //get all beers and sort by name
             .getAllBeers().then(response => {
                 this.beers = response.data.sort((a, b) => a.name.localeCompare(b.name));
             });
         ReviewService
+        //get all beers and sort by brewery
             .getAllBreweries().then(response => {
                 this.breweries = response.data.sort((a, b) => a.name.localeCompare(b.name));
             });
@@ -86,10 +88,13 @@ export default {
 
     methods: {
         saveReview() {
-            ReviewService
-              .saveNewReview(this.review)
+            // uses current logged in user and sets user id
+            this.review.userId = this.$store.state.user.id;
+
+            ReviewService.saveNewReview(this.review)
               .then(response => {
                   if(response.status === 201) {
+                      // David said this is to go back to brewery details page after review is saved
                       this.$router.push(`/beers/breweryId=${this.review.breweryId}`);
                       console.log("review added");
                   }

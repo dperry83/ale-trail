@@ -5,7 +5,7 @@
     <!-- displays ListAllBeers component, now refactored to 
          display beers by breweryId -->
     <list-all-beers />
-    <new-review />
+   <brewery-reviews :brewery-id="breweryId"/>
     </div>
 </template>
 
@@ -13,7 +13,8 @@
 import ListAllBeers from '../components/ListAllBeers.vue'
 import TheHeader from '../components/TheHeader.vue'
 import BreweryDetails from '../components/BreweryDetails.vue'
-import NewReview from '../components/NewReview.vue'
+import BreweryReviews from '../components/BreweryReviews.vue'
+
 
 export default {
     name: 'beers-by-brewery',
@@ -21,7 +22,12 @@ export default {
         TheHeader,
         BreweryDetails,
         ListAllBeers,
-        NewReview
+        BreweryReviews
+    },
+    data() {
+        return {
+            breweryId: this.$route.params.id
+        }
     }
 
 }
