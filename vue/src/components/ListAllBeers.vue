@@ -1,5 +1,6 @@
 <template>
     <div id="beersTable">
+        
         <table>
             <thead>
                 <tr>
@@ -60,8 +61,7 @@ table {
     margin: auto;
     border-collapse: collapse;
     padding: 10px 30px 10px 15px;
-    ;
-   
+    
 }
 th, td {
     text-align: center;

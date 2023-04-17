@@ -1,4 +1,7 @@
 <template>
+<body>
+  
+
   <div id="login" class="text-center">
     
     <form class="form-signin" @submit.prevent="login">
@@ -25,11 +28,12 @@
         autofocus
       />
       <br>
-      <label for="password" class="sr-only">Password: &nbsp;&nbsp;</label>
+      <br>
+      <label for="password" class="sr-only">Password:  &nbsp;&nbsp;</label>
       <input
         type="password"
         id="password"
-        class="form-control"
+        class="form-control" 
         placeholder="Password"
         v-model="user.password"
         required
@@ -40,6 +44,7 @@
       <button id="submit" type="submit">Sign in</button>
     </form>
   </div>
+  </body>
 </template>
 
 <script>
@@ -83,24 +88,43 @@ export default {
 <style scoped>
 
 #logo {
-  
+  transform: scale(1.5);
+  margin-left: 35%;
 }
 
 #login{
-  border: 1px solid black;
-  width: 900px;
-  height: 600px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+  
+ /* 
+  border: 2px solid black;
+  top: 30%;
+  margin-left: 20%;
+  width: 400px;
+  height: 500px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
- 
+ */
 }
 
 #submit {
+  color: white;
+  background-color: rgba(6,40,81,255);
   margin-left: 70px;
 }
 
 
+/*body {
+  background-image: url("backgroundLogIn.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}*/
 
 </style>
