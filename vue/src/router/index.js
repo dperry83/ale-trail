@@ -9,6 +9,7 @@ import Breweries from '../views/Breweries.vue'
 import Beers from '../views/Beers.vue'
 import FinerDetails from '../views/FinerDetails.vue'
 import TestReview from '../views/TestReview.vue'
+import Admin from '../views/Admin.vue'
 
 Vue.use(Router)
 
@@ -84,6 +85,14 @@ const router = new Router({
         path: "/review",
         name: "testreview",
         component: TestReview,
+        meta: {
+          requiresAuth: true
+        }
+      },
+      {
+        path: "/admin",
+        name: "admin",
+        component: Admin,
         meta: {
           requiresAuth: true
         }
