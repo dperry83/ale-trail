@@ -23,22 +23,19 @@
                     <td> {{ user.city }} </td>
                     <td> {{ user.state }} </td>
                     <td> {{ user.zip }} </td>
+                   
                     <td> 
                         <label for="role-change">Change Role: </label> <br>
-                        <select name="role-change" id="role-dropdown">
+                        <select 
+                          name="role-change" 
+                          id="role-dropdown" 
+                          v-model="activeUser.role"                        
+                          >
                             <option value="none"></option>
                             <option value="ROLE_USER">User</option>
                             <option value="ROLE_BREWER">Brewer</option>
                             <option value="ROLE_ADMIN">Administrator</option>
                         </select>
-                        <!-- <div class="dropdown">
-                            <button class="dropbtn">Change Role</button>
-                            <div id="each-dropdown" class="dropdown-content">
-                                <a href="#">User</a>
-                                <a href="#">Brewer</a>
-                                <a href="#">Admin</a>
-                            </div>
-                        </div> -->
                     </td>
                 </tr>
             </tbody>
@@ -53,7 +50,16 @@ export default {
     name: 'all-users',
     data() {
         return {
-            users: []
+            users: [],
+            activeUser: {
+                id: '',
+                username: '',
+                name: '',
+                city: '',
+                state: '',
+                zip: '',
+                role: ''
+            }
         }
     },
     created() {
@@ -66,8 +72,24 @@ export default {
     methods: {
         changeRole() {
             
-        }
+            // const user = {
+            //     id: this.user.id,
+            //     username: this.user.username,
+            //     name: this.user.name,
+            //     city: this.user.city,
+            //     state: this.user.state,
+            //     zip: this.user.zip,
+            //     role: newRole
+            // };
+            UserService
+                .updateUser()
+                .then( response => {
+                    if(response.status === 200) {
+                        this.$router.push('/admin')
+                    }
+                })
     }
+}
 }
 </script>
 
