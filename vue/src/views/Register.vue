@@ -1,4 +1,7 @@
 <template>
+<body>
+  
+
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
@@ -154,6 +157,7 @@
     
     </form>
   </div>
+  </body>
 </template>
 
 <script>
@@ -235,4 +239,16 @@ export default {
 #confirmPassword.form-control {
   margin-left: 81px
 }
+
+body {
+  background-image: url("beerbackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+
 </style>

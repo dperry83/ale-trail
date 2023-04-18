@@ -120,11 +120,14 @@ export default {
 }
 
 
-/*body {
-  background-image: url("backgroundLogIn.jpg");
+body {
+  background-image: url("beerbackground.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-}*/
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
 
 </style>
