@@ -55,6 +55,7 @@ export default {
 table {
     width: 80%;
     margin-left: 10%;
+    border-collapse: collapse;
     
 }
 th, td {
