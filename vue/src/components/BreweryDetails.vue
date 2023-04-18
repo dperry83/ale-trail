@@ -61,7 +61,7 @@ export default {
   methods: {
     dailyHours(string) {
       const daily = string.split(/\n/);
-        return daily;
+        return daily;                    
       }
     }
   }
