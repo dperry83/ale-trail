@@ -1,6 +1,7 @@
 <template>
-  <div class="review-form">
-    <button>Review a Beer</button>
+  <div>
+  <button @click="showForm=!showForm">Review a Beer</button>
+  <div v-if="showForm">
   <form>
     <div class="field">
       <label for="beer">Beer</label>
@@ -29,6 +30,7 @@
     </div>
   </form>
   </div>
+  </div>
 </template>
 
 <script>
@@ -54,8 +56,10 @@ export default {
         text: '',
         date: this.setDate(),
         rating: 0,
-        isForBeer: true
+        isForBeer: true,
+        
       },
+      showForm: false,
 
       beers: [],
       filteredBeers: []
@@ -88,6 +92,8 @@ export default {
           // David said this is to go back to brewery details page after review is saved
           this.$router.push(`/beers/breweryId=${this.review.breweryId}`);
           console.log("review added");
+
+          this.showForm = false;
         }
       })
     },
