@@ -44,10 +44,11 @@ export default {
 .highlightbeer,
 .maps {
   display: inline-flex;
+
 }
 
 .maps {
-  margin-left: 900px;
+  margin-left: 100px;
 }
 
 .image-container {

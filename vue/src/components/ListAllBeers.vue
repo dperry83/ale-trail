@@ -26,6 +26,7 @@
                 </tr>
             </tbody>
         </table>
+        <br><br><br>
     </div>
 </template>
 
@@ -57,7 +58,7 @@ export default {
 
 <style scoped>
 table {
-    width: auto;
+    width: 900px;
     margin: auto;
     border-collapse: collapse;
     padding: 10px 30px 10px 15px;
