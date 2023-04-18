@@ -68,9 +68,6 @@ export default {
         return {
             users: [],
             activeUser: {
-                authorities: [{
-                    name:''
-                }],
                 role: '',
                 city: '',
                 id: '',
@@ -90,11 +87,14 @@ export default {
     },
     methods: {
         changeRole(activeUser) {
+            // deleted the authorities property before sending the object
+            // will look into why the server functions this way
+            delete activeUser.authorities;
             UserService
-                .updateUserRole(activeUser.id, activeUser.role)
+                .updateUserRole(activeUser.id, activeUser)
                 .then( response => {
                     if(response.status === 200) {
-                        console.log("update successful!")
+                        console.log("update successful!");
                     }
                 })
         },

@@ -41,8 +41,8 @@ public class UserController {
     }
 
     @RequestMapping(path = "/user/{id}", method = RequestMethod.PUT)
-    public boolean updateUserRole(String role, @PathVariable int id) {
-        userDAO.updateUserRole(role, id);
+    public boolean updateUserRole(@RequestBody User user, @PathVariable int id) {
+        userDAO.updateUserRole(user, id);
         return true;
     }
 }
