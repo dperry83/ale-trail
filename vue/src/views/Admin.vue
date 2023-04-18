@@ -1,5 +1,7 @@
 <template>
-    <all-users />
+    <div>
+        <all-users />
+    </div>
 </template>
 
 <script> 
