@@ -10,9 +10,13 @@
     <h3>ALE TRAIL Beer of the Month</h3>
     <h4> Lakes & Legends "Vibe Czech"</h4>
     </div>
+    
     <img class="highlightbeer" src="highlightedbeer.jpg" alt="hlbeer">
+    <google-maps/>
     </div>
+    
     </div>
+    
     <the-footer />
   </div>
 </template>
@@ -21,19 +25,31 @@
 <script>
 import TheFooter from '../components/TheFooter.vue';
 import TheHeader from '../components/TheHeader.vue'
+import GoogleMaps from '../components/GoogleMaps.vue'
 
 
 export default {
   name: "home",
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    GoogleMaps,
   }
 };
 </script>
 
 
 <style scoped>
+
+.highlightbeer,
+.maps {
+  display: inline-flex;
+}
+
+.maps {
+  margin-left: 900px;
+}
+
 .image-container {
  
   overflow: hidden;
@@ -52,7 +68,7 @@ export default {
 
 
 .beer-text{
-  margin-left: 4.5%;
+  margin-left: 8%;
   margin-top: 2%;
 }
 
@@ -80,8 +96,7 @@ h4 {
 
 
 .highlightbeer {
-  align-self: flex-end;
-  margin-left: 5%;
+  margin-left: 8.3%;
   max-width: 600px;
   max-height: 350px;
   border: 10px solid #062851;
