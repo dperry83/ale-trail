@@ -11,7 +11,16 @@ public class Review {
     private String text;
     private Date date;
     private int rating;
+    private String username;
     private boolean isForBeer;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public long getReviewId() {
         return reviewId;
