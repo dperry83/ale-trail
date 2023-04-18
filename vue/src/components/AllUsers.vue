@@ -1,5 +1,5 @@
 <template>
-    <div class="users">
+    <div class="users" v-if="authUserRole === 'ROLE_ADMIN'">
         <div class="all-users">
         <table class="user-table">
             <thead>
