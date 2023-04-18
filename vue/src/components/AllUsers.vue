@@ -75,7 +75,8 @@ export default {
                 state: '',
                 username: '',
                 zip: ''
-            }
+            },
+            authUserRole: ''
         }
     },
     created() {
@@ -83,6 +84,11 @@ export default {
             .getAllUsers()
             .then( response => {
                 this.users = response.data
+            }),
+        UserService
+            .getCurrentUser(this.$store.state.user.username)
+            .then( response => {
+                this.authUserRole = response.data.authorities[0].name
             })
     },
     methods: {
@@ -95,6 +101,7 @@ export default {
                 .then( response => {
                     if(response.status === 200) {
                         console.log("update successful!");
+
                     }
                 })
         },
