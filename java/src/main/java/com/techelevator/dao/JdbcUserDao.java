@@ -83,11 +83,13 @@ public class JdbcUserDao implements UserDao {
         return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole, name, city, state, zip) == 1;
     }
     @Override
-    public boolean updateUserRole(String role, int id) {
+    public boolean updateUserRole(User user, int id) {
         String updateUserSql = "UPDATE users " +
-                                "SET role = ? WHERE user_id = ?";
+                "SET role = ?, username = ?, name = ?, city = ?, state = ?, zip = ? " +
+                "WHERE user_id = ?;";
         try {
-            jdbcTemplate.update(updateUserSql, role, id);
+            jdbcTemplate.update(updateUserSql, user.getRole(), user.getUsername(), user.getName(),
+                            user.getCity(), user.getState(), user.getZip(), id);
         }catch(DataIntegrityViolationException e) {
             updateUserSql = "ROLLBACK;";
             jdbcTemplate.update(updateUserSql);
