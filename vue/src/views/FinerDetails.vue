@@ -2,13 +2,19 @@
 <template>
   <div class="finerdetails">
     <the-header />
-    <brewery-details />
-    <list-all-beers />
-    <brewery-reviews :brewery-id="breweryId" />
+    <div>
+      <brewery-details />
+    </div>
+    <div>
+      <list-all-beers />
+    </div>
+    <div>
+      <brewery-reviews :brewery-id="breweryId" />
+    </div>
     <!-- pass the brewery id to the reviews sending it to the props -->
     <reviews :brewery-id="breweryId" />
     <!-- pass the brewery properties to the add or delete beer component as a prop -->
-    <add-or-delete-beer :breweries="breweries"/>
+    
   </div>
 </template>
 
@@ -18,7 +24,6 @@ import TheHeader from "../components/TheHeader.vue";
 import BreweryDetails from "../components/BreweryDetails.vue";
 import BreweryReviews from "../components/BreweryReviews.vue";
 import Reviews from "../components/Reviews.vue"; 
-import AddOrDeleteBeer from "../components/AddOrDeleteBeer.vue";
 import BreweryService from "../services/BreweryService"
 
 export default {
@@ -28,8 +33,7 @@ export default {
     BreweryDetails,
     ListAllBeers,
     BreweryReviews,
-    Reviews,
-    AddOrDeleteBeer
+    Reviews
   },
   data() {
     return {

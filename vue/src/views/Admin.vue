@@ -1,16 +1,23 @@
 <template>
     <div>
-        <all-users />
+        <section>
+            <all-users />
+        </section>
+        <section>
+            <add-new-brewery />
+        </section>
     </div>
 </template>
 
 <script> 
 import AllUsers from '../components/AllUsers.vue'
+import AddNewBrewery from '../components/AddNewBrewery.vue'
 
 export default {
     name: 'allusers',
     components: {
-        AllUsers
+        AllUsers,
+        AddNewBrewery
     }
 }
 

@@ -3,6 +3,7 @@ package com.techelevator.model;
 public class Brewery {
 
     private long breweryId;
+    private int userId;
     private String name;
     private String address;
     private String phone;
@@ -10,6 +11,14 @@ public class Brewery {
     private String website;
     private String hoursDaysOperation;
     private String image;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public long getBreweryId() {
         return breweryId;

@@ -75,11 +75,7 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
- 
   grid-template-columns: repeat(3, 30%);
- 
-
-
   gap: 165px;
   padding-top: 20px;
   padding-left: 20px;

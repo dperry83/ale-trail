@@ -10,7 +10,7 @@ import Beers from '../views/Beers.vue'
 import FinerDetails from '../views/FinerDetails.vue'
 import TestReview from '../views/TestReview.vue'
 import Admin from '../views/Admin.vue'
-import { mapGetters } from 'vuex'
+import Brewer from '../views/Brewer.vue'
 
 
 Vue.use(Router)
@@ -23,7 +23,6 @@ Vue.use(Router)
  * If the user has not yet authenticated (and needs to) they are redirected to /login
  * If they have (or don't need to) they're allowed to go about their way.
  */
-mapGetters(['user'])
 
 const router = new Router({
   mode: 'history',
@@ -99,7 +98,15 @@ const router = new Router({
         meta: {
           requiresAuth: true
         }
-      }
+      },
+        {
+         path: "/brewer",
+         name: "brewer",
+         component: Brewer,
+         meta: {
+           requiresAuth: true
+         } 
+        }
   ]
 })
 

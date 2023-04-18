@@ -33,9 +33,9 @@ public class JdbcBreweryDao implements breweryDao{
 
     @Override
     public void addBrewery(Brewery brewery) {
-        String sqlAddBrewery = "INSERT INTO brewery(name, image, history, website," +
-                "hours_days_operation, address, phone) VALUES(?,?,?,?,?,?,?);";
-        jdbcTemplate.update(sqlAddBrewery, brewery.getName(), brewery.getImage(), brewery.getHistory(),
+        String sqlAddBrewery = "INSERT INTO brewery(user_id, name, image, history, website," +
+                "hours_days_operation, address, phone) VALUES(?,?,?,?,?,?,?,?);";
+        jdbcTemplate.update(sqlAddBrewery, brewery.getUserId(), brewery.getName(), brewery.getImage(), brewery.getHistory(),
                 brewery.getWebsite(),brewery.getHoursDaysOperation(),brewery.getAddress(),brewery.getPhone());
     }
 

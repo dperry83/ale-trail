@@ -10,5 +10,8 @@ export default {
     },
     getBreweryDetails(id) {
         return http.get(`/breweries/${ id }`)
+    },
+    addNewBrewery(brewery) {
+        return http.post(`/breweries`, brewery)
     }
 }
