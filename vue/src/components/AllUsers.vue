@@ -29,21 +29,21 @@
                         <button 
                         v-on:click="setActiveUser(user)">Edit User</button>
                     </td>
-                    
-                        <label for="role-change"
-                            v-if="user.id === activeUser.id">Update Role: </label> <br>
-                        <select 
-                          name="role-change" 
-                          id="role-dropdown"       
-                          v-model="activeUser.role"
-                          v-if="user.id === activeUser.id"                  
-                          >
-                            <option value="none"></option>
-                            <option value="ROLE_USER">User</option>
-                            <option value="ROLE_BREWER">Brewer</option>
-                            <option value="ROLE_ADMIN">Administrator</option>
-                        </select>
-                    
+                        <div class="update-role">
+                            <label for="role-change"
+                                v-if="user.id === activeUser.id">Update Role: </label> <br>
+                            <select 
+                            name="role-change" 
+                            id="role-dropdown"       
+                            v-model="activeUser.role"
+                            v-if="user.id === activeUser.id"                  
+                            >
+                                <option value="none"></option>
+                                <option value="ROLE_USER">User</option>
+                                <option value="ROLE_BREWER">Brewer</option>
+                                <option value="ROLE_ADMIN">Administrator</option>
+                            </select>
+                        </div>
                 </tr>
             </tbody>
         </table>

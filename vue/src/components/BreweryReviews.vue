@@ -1,4 +1,6 @@
 <template>
+  <div class="review-form">
+    <button>Review a Beer</button>
   <form>
     <div class="field">
       <label for="beer">Beer</label>
@@ -26,6 +28,7 @@
       <button type="submit" onclick="window.location.reload();" v-on:click.prevent="saveReview()">Save Review</button>
     </div>
   </form>
+  </div>
 </template>
 
 <script>
@@ -105,5 +108,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 </style>

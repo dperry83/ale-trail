@@ -11,6 +11,9 @@ export default {
     getUserId(username) {
         return http.get(`user/id/name=${username}`)
     },
+    getCurrentUser(username) {
+        return http.get(`user/name=${username}`)
+    },
     updateUserRole(id, user) {
         return http.put(`/user/${id}`, user)
     }
