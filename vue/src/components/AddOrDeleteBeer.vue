@@ -35,10 +35,15 @@
       <!-- Delete Beer -->
       <form @submit.prevent="deleteBeer">
           <h3>Delete Beer</h3>
+          <label for="breweryToDelete">Brewery:</label>
+          <select id="breweryToDelete" v-model="breweryToDelete">
+              <option v-for="brewery in filteredBreweries" :value="brewery.breweryId" :key="brewery.breweryId">{{ brewery.name }}</option>
+          </select>
+          <br>
           <label for="beerId">Beer:</label>
           <select id="beerId" v-model="beerToDelete">
-  <option v-for="beer in brewersBeers" :value="beer.beerId" :key="beer.beerId">{{ beer.name }}</option>
-</select>
+              <option v-for="beer in filteredBeers" :value="beer.beerId" :key="beer.beerId">{{ beer.name }}</option>
+          </select>
           <br>
           <button type="submit">Delete Beer</button>
       </form>
@@ -74,6 +79,15 @@ computed: {
     } else {
       return [];
     }
+  },
+
+  //filter beers from breweries
+  filteredBeers() {
+    if (this.breweryToDelete) {
+      return this.brewersBeers.filter(beer => beer.breweryId === this.breweryToDelete);
+    } else {
+      return [];
+    }
   }
 },
   data() {
@@ -90,6 +104,7 @@ computed: {
       // beers from the brewer
 
       brewersBeers:[],
+      breweryToDelete: null,
     }
   },
   created(){
