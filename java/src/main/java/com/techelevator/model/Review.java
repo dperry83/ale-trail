@@ -6,13 +6,31 @@ import java.util.Date;
 public class Review {
     private int reviewId;
     private int userId;
+//    private String reviewerName;
     private int breweryId;
     private int beerId;
+    private String beerName;
     private String text;
     private Date date;
     private int rating;
     private String username;
     private boolean isForBeer;
+
+//    public String getReviewerName() {
+//        return reviewerName;
+//    }
+
+//    public void setReviewerName(String reviewerName) {
+//        this.reviewerName = reviewerName;
+//    }
+
+    public String getBeerName() {
+        return beerName;
+    }
+
+    public void setBeerName(String beerName) {
+        this.beerName = beerName;
+    }
 
     public String getUsername() {
         return username;
