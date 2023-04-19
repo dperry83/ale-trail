@@ -18,5 +18,6 @@ public interface breweryDao {
 
     Brewery getBreweryByName(String name);
 
+    List<Brewery> getBreweriesByUserId(int userId);
 
 }

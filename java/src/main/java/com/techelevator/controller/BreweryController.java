@@ -58,4 +58,10 @@ public class BreweryController {
         return true;
     }
 
+    @RequestMapping(path = "/breweries/user/{userId}", method = RequestMethod.GET)
+    public List<Brewery> getBreweriesByUserId(@PathVariable int userId) {
+        List<Brewery> breweries = breweryDAO.getBreweriesByUserId(userId);
+        return breweries;
+    }
+
 }
