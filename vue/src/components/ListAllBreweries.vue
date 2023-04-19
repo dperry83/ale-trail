@@ -89,6 +89,11 @@ td {
   border: 1px solid black;
   padding: 13px 10px;
 }
+
+th {
+  color: white;
+  background-color: #062851;
+}
 td {
   padding-right: 10px;
   vertical-align: top;
