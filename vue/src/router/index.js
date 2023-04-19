@@ -11,6 +11,7 @@ import FinerDetails from '../views/FinerDetails.vue'
 import TestReview from '../views/TestReview.vue'
 import Admin from '../views/Admin.vue'
 import Brewer from '../views/Brewer.vue'
+import Unauthorized from '../views/Unauthorized.vue'
 
 
 Vue.use(Router)
@@ -69,46 +70,64 @@ const router = new Router({
         // ultimately: require authentication?
       }
     },
-      {
-        path: "/beers",
-        name: "beers",
-        component: Beers,
-        meta: {
-          requiresAuth: false
-          // ultimately: require authentication?
-        }
+    {
+      path: "/beers",
+      name: "beers",
+      component: Beers,
+      meta: {
+        requiresAuth: false
+        // ultimately: require authentication?
+      }
     },
-      {
-        path: "/beers/breweryId=:id",
-        name: "finerdetails",
-        component: FinerDetails
-      },
-      {
-        path: "/review",
-        name: "testreview",
-        component: TestReview,
-        meta: {
-          requiresAuth: true
-        }
-      },
-      {
-        path: "/admin",
-        name: "admin",
-        component: Admin,
-        meta: {
-          requiresAuth: true
-        }
-      },
-        {
-         path: "/brewer",
-         name: "brewer",
-         component: Brewer,
-         meta: {
-           requiresAuth: true
-         } 
-        }
+    {
+      path: "/beers/breweryId=:id",
+      name: "finerdetails",
+      component: FinerDetails
+    },
+    {
+      path: "/review",
+      name: "testreview",
+      component: TestReview,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/admin",
+      name: "admin",
+      component: Admin,
+      beforeEnter: (to, from, next) => {
+        if (isAdmin()) { 
+          next() 
+        } else { next('/unauthorized') }
+      },  
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/brewer",
+      name: "brewer",
+      component: Brewer,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/unauthorized',
+      name: 'Unauthorized',
+      component: Unauthorized,
+      meta: {
+        requiresAuth: false
+      }
+    }
   ]
 })
+
+function isAdmin() {
+  return store.state.user.authorities[0].name === "ROLE_ADMIN";
+
+}
 
 router.beforeEach((to, from, next) => {
   // Determine if the route requires Authentication
