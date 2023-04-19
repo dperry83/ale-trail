@@ -16,5 +16,8 @@ export default {
     },
     updateBrewery(brewery) {
         return http.put(`/breweries/${brewery.breweryId}`, brewery)
-      }
+    },
+    getBreweriesByUserId(userId){
+        return http.get(`/breweries/user/${userId}`);
+    }
 }

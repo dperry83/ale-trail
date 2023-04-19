@@ -5,9 +5,6 @@
         <tr>
           <th>
             Name
-            <!-- <select name="" id="sort">
-                            <option value="" v-model="">Sort A-Z</option>
-                        </select> -->
             <input type="text" v-model="searchTerm" placeholder="search" />
           </th>
           <th>History</th>
@@ -64,13 +61,6 @@ export default {
     filteredBreweries() {
       return this.breweries.filter((item) => {
         return item.name.toLowerCase().includes(this.searchTerm.toLowerCase());
-      });
-    },
-  },
-  methods: {
-    sortByName() {
-      this.breweries.sort((a, b) => {
-        return a.name - b.name;
       });
     },
   },
