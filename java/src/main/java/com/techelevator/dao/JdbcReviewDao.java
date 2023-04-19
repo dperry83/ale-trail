@@ -34,7 +34,7 @@ public class JdbcReviewDao implements reviewDao{
         List<Review> allReviews = new ArrayList<>();
         String sqlSelectAllReviews = "SELECT reviews.*, beers.name, users.username " +
                 "FROM reviews " +
-                "INNER JOIN beers ON reviews.user_id = beers.beer_id " +
+                "INNER JOIN beers ON reviews.beer_id = beers.beer_id " +
                 "INNER JOIN users ON reviews.user_id = users.user_id " +
                 "WHERE reviews.brewery_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews, brewery_id);
