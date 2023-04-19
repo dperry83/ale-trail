@@ -1,5 +1,5 @@
 <template>
-    <div class="users" v-if="authUserRole === 'ROLE_ADMIN'">
+    <div class="users">
         <div class="all-users">
         <table class="user-table">
             <thead>
@@ -75,8 +75,7 @@ export default {
                 state: '',
                 username: '',
                 zip: ''
-            },
-            authUserRole: ''
+            }
         }
     },
     created() {
@@ -84,11 +83,6 @@ export default {
             .getAllUsers()
             .then( response => {
                 this.users = response.data
-            }),
-        UserService
-            .getCurrentUser(this.$store.state.user.username)
-            .then( response => {
-                this.authUserRole = response.data.authorities[0].name
             })
     },
     methods: {

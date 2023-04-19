@@ -102,7 +102,7 @@ const router = new Router({
         } else { next('/unauthorized') }
       },  
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -126,7 +126,6 @@ const router = new Router({
 
 function isAdmin() {
   return store.state.user.authorities[0].name === "ROLE_ADMIN";
-
 }
 
 router.beforeEach((to, from, next) => {

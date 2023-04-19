@@ -22,9 +22,9 @@ export default new Vuex.Store({
     user: currentUser || {}
   },
   // added getter to get user object
-  getters:{
-    user: (state) => state.user,
-  },
+  // getters:{
+  //   user: (state) => state.user,
+  // },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
