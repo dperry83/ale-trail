@@ -109,6 +109,11 @@ const router = new Router({
       path: "/brewer",
       name: "brewer",
       component: Brewer,
+      beforeEnter: (to, from, next) => {
+        if (isBrewer()) {
+          next()
+        } else { next('/unauthorized')}
+      },
       meta: {
         requiresAuth: true
       }
@@ -127,6 +132,11 @@ const router = new Router({
 function isAdmin() {
   return store.state.user.authorities[0].name === "ROLE_ADMIN";
 }
+
+function isBrewer() {
+  return store.state.user.authorities[0].name === "ROLE_BREWER";
+}
+
 
 router.beforeEach((to, from, next) => {
   // Determine if the route requires Authentication
