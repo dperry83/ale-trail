@@ -7,6 +7,7 @@
 
     <!-- cycle through each review in the list of reviews to pull up -->
     <div v-for="review in reviews" :key="review.id">
+      <h2> {{ review.beerName }} </h2>
       <h3>{{ review.username }} Rated it: {{ review.rating }}/5     </h3>
       <h6>Date: {{review.date}}</h6>
       <p>{{ review.text }}</p>
