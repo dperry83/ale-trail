@@ -7,7 +7,7 @@
 
     <!-- cycle through each review in the list of reviews to pull up -->
     <div v-for="review in reviews" :key="review.id">
-      <h3>{{ review.username }} - Rating: {{ review.rating }}     </h3>
+      <h3>{{ review.username }} Rated it: {{ review.rating }}/5     </h3>
       <h6>Date: {{review.date}}</h6>
       <p>{{ review.text }}</p>
       <hr />
@@ -49,5 +49,10 @@ export default {
 </script>
 
 <style scoped>
+
+.reviews {
+  margin: auto;
+  width: 60%;
+}
   
 </style>
