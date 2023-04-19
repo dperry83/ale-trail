@@ -49,7 +49,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'UpdateBrewery',
-  props: ['usrBreweries'],
+  props: ['userBreweries'],
   data() {
     return {
         // the properties
@@ -99,6 +99,7 @@ export default {
 // This method fetches all the breweries from the backend using the BreweryService and sets the data to the 'breweries' property
      async fetchBreweries() {
   try {
+    //get the brewery by user id
     const response = await BreweryService.getBreweriesByUserId(this.user.id);
     this.breweries = response.data.sort((a, b) => a.name.localeCompare(b.name));
   } catch (error) {
