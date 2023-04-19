@@ -1,9 +1,9 @@
 <template>
-  <div>
-  <button @click="showForm=!showForm">Review a Beer</button>
-  <div v-if="showForm">
-  <form>
-    <div class="field">
+  <div class="all-review">
+  <button @click="showForm=!showForm" id="show-form">Review a Beer</button>
+  <div class="form-container">
+  <form id="review-form" v-if="showForm">
+    <div id="beer-select">
       <label for="beer">Beer</label>
       <select name="beer" v-model="review.beerId">
         <option disabled value="">Please select a beer</option>
@@ -13,21 +13,24 @@
           {{ beer.name }}
         </option>
       </select>
+      <div class="field" id="beer-rating">
+        <label for="rating">Your Rating (1 thru 5) </label>
+        <input type="number" min="1" max="5" v-model="review.rating" />
+    </div>
     </div>
 
-    <div class="field">
-      <label for="review">Review Text</label>
-      <textarea name="review" rows="4" cols="40" v-model="review.text"></textarea>
+    <div class="review-text">
+      <label for="review">Your Review: </label>
+      <textarea name="review" rows="4" id="type-area"
+                v-model="review.text"></textarea>
+      <div class="actions">
+        <button type="submit" id="submit-review"
+                onclick="window.location.reload();" 
+                v-on:click.prevent="saveReview()">Save Review</button>
+    </div>
     </div>
 
-    <div class="field">
-      <label for="rating">Your Rating (1 thru 5) </label>
-      <input type="number" min="1" max="5" v-model="review.rating" />
-    </div>
-
-    <div class="actions">
-      <button type="submit" onclick="window.location.reload();" v-on:click.prevent="saveReview()">Save Review</button>
-    </div>
+    
   </form>
   </div>
   </div>
@@ -116,7 +119,39 @@ export default {
 </script>
 
 <style scoped>
-.field{
-  margin-left: 100px;
+
+.all-review {
+  margin: auto;
+  width: 60%;
+  padding: 20px;
+  text-align: center;
 }
+
+#review-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 10px;
+  border: 1px solid black;
+  margin-top: 5px;
+  padding: 15px;
+}
+#review-form > .field{
+  margin: auto;
+  padding: 5px;
+}
+#beer-select {
+  display: flex;
+  flex-direction: column;
+}
+#beer-rating {
+  padding-top: 5px;
+  text-align: center;
+}
+.actions {
+  text-align: right;
+}
+#type-area {
+  width: 100%;
+}
+
 </style>
