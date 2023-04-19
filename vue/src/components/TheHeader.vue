@@ -102,6 +102,7 @@ padding: 2px 20px;
 border-radius: 5px;
 }
 
+
 #brew {
 border: 1px solid black;
 background: rgba(6,40,81,255);
@@ -110,5 +111,24 @@ color: white;
 padding: 2px 20px;
 border-radius: 5px;
 }
+
+@media screen and (max-width: 760px) {
+    
+    .tagline {
+        font-size: 24px;
+        margin-left: 5px;
+    }
+
+    
+
+    #box {
+        width: 180px;
+    }
+
+
+
+}
+    
+
 
 </style>

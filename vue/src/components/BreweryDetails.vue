@@ -1,7 +1,7 @@
 <template>
   <div>
 
-
+    <a id = "website" :href="brewery.website" target="_blank"> {{brewery.name}} </a>
     <!-- .info currently holds all the component details  -->
     <div class="info">
      
@@ -14,9 +14,9 @@
 
 
       <!-- linked name: middle 1/3 of page -->
-      <div class="name">
+      <!-- <div class="name">
         <a :href="brewery.website" target="_blank"> {{brewery.name}} </a>
-      </div>
+      </div> -->
      
       <!-- hours: right 1/3 of page -->
       <div class="hours">
@@ -69,6 +69,14 @@ export default {
 
 
 <style scoped>
+
+#website {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
 
 
 .info {

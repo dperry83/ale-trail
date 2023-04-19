@@ -136,6 +136,7 @@ function isBrewer() {
   return store.state.user.authorities[0].name === "ROLE_BREWER";
 }
 
+
 router.beforeEach((to, from, next) => {
   // Determine if the route requires Authentication
   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);

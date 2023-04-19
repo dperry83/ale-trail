@@ -2,7 +2,7 @@
   <div class="maps">
     <iframe
       width="375"
-      height="350"
+      height="375"
       style="border:0"
       loading="lazy"
       allowfullscreen
