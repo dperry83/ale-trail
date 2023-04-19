@@ -5,14 +5,28 @@
  
     <div class="image-container">
     <img class="homepic" src="HP1.png" alt="da hp">
-    <div class="beer-award">
     <div class="beer-text">
     <h3>ALE TRAIL Beer of the Month</h3>
     <h4> Lakes & Legends "Vibe Czech"</h4>
     </div>
+    <div class="beer-award">
+    
     
     <img class="highlightbeer" src="highlightedbeer.jpg" alt="hlbeer">
     <google-maps/>
+    <blockquote>
+      <h2>Chris P. Bacon</h2>
+      <p>Really good Vibes with this one ;) &nbsp;&nbsp;&nbsp;&nbsp;      4 out of 5</p>
+      <br>
+      <h2>Carrie Oaky</h2>
+      <p>No one Czeched my ID lol &nbsp;&nbsp;&nbsp;&nbsp;  5 out of 5</p>
+      <br>
+      <h2>Page Turner</h2>
+      <p>No me gusta la cerveza &nbsp;&nbsp;&nbsp;&nbsp;  2 out of 5</p>
+
+
+      
+    </blockquote>
     </div>
     
     </div>
@@ -41,10 +55,14 @@ export default {
 
 <style scoped>
 
-.highlightbeer,
-.maps {
-  display: inline-flex;
+div.beer-award {
+  display: flex;
+  flex-direction: row;
+}
 
+blockquote {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .maps {
