@@ -5,8 +5,10 @@
         <div id="nav" >
             
             <router-link id="headerHome" v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;&nbsp;|&nbsp;
+            <button id="random" @click="handleClick">Beer Me</button> &nbsp;
+            <input id="box" type="text" v-model="randomBrewery" readonly /> &nbsp;&nbsp;|&nbsp;
             <router-link id="brew" to="/breweries">View All Breweries</router-link> &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            <router-link id="logoutHeader" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+            <router-link id="logoutHeader" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link> &nbsp;&nbsp;&nbsp;
             
             
         </div>
@@ -19,13 +21,43 @@
 </template>
 
 <script> 
+import axios from 'axios';
+
 export default {
-    name: 'the-header'
-}
+    name: 'the-header',
+    data() {
+        return {
+            randomBrewery: '',
+        };
+    },
+    methods: {
+        async handleClick() {
+        
+            try {
+                const response = await axios.get('/breweries/random');
+                this.randomBrewery = response.data.name;
+            } catch (error) {
+                console.error("Error getting brewery: ", error);
+            }
+        },
+    },
+};
 </script>
 
 <style>
 
+#box{
+    width: 220px;
+}
+
+#random {
+border: 1px solid black;
+background: rgba(6,40,81,255);
+background-clip: padding-box;
+color: white;
+padding: 4px 20px;
+border-radius: 5px;
+}
 
 
 #logo,
@@ -45,7 +77,8 @@ font-weight: bolder;
 #nav {
     display: inline-block;
     margin-top:30px;
-    float: right;
+    position: absolute;
+    right: 0;
     
 }
 
@@ -57,6 +90,8 @@ color: white;
 padding: 2px 20px;
 border-radius: 5px;
 }
+
+
 
 #headerHome {
 border: 1px solid black;

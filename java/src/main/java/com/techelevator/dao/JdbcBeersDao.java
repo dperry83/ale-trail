@@ -112,7 +112,6 @@ public class JdbcBeersDao implements beersDao{
         return allBeers;
     }
 
-
     private Beer mapRowToBeer(SqlRowSet rs){
         Beer beer = new Beer();
         beer.setBeerId(rs.getInt("beer_id"));

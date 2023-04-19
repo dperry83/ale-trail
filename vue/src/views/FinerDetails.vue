@@ -14,7 +14,7 @@
     <!-- pass the brewery id to the reviews sending it to the props -->
     <reviews :brewery-id="breweryId" />
     <!-- pass the brewery properties to the add or delete beer component as a prop -->
-    
+    <the-footer />
   </div>
 </template>
 
@@ -25,6 +25,7 @@ import BreweryDetails from "../components/BreweryDetails.vue";
 import BreweryReviews from "../components/BreweryReviews.vue";
 import Reviews from "../components/Reviews.vue"; 
 import BreweryService from "../services/BreweryService"
+import TheFooter from "../components/TheFooter.vue"
 
 export default {
   name: "finerdetails",
@@ -33,7 +34,8 @@ export default {
     BreweryDetails,
     ListAllBeers,
     BreweryReviews,
-    Reviews
+    Reviews,
+    TheFooter
   },
   data() {
     return {

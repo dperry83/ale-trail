@@ -32,7 +32,11 @@ public class JdbcReviewDao implements reviewDao{
     @Override
     public List<Review> getReviewsForBreweryById(int brewery_id) {
         List<Review> allReviews = new ArrayList<>();
-        String sqlSelectAllReviews = "SELECT reviews.*, users.username FROM reviews INNER JOIN users ON reviews.user_id = users.user_id WHERE brewery_id = ?;";
+        String sqlSelectAllReviews = "SELECT reviews.*, beers.name, users.username " +
+                "FROM reviews " +
+                "INNER JOIN beers ON reviews.user_id = beers.beer_id " +
+                "INNER JOIN users ON reviews.user_id = users.user_id " +
+                "WHERE reviews.brewery_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews, brewery_id);
 
         while(results.next()) {
@@ -82,7 +86,9 @@ public class JdbcReviewDao implements reviewDao{
 
     private Review mapRowToReview(SqlRowSet rs){
         Review review = new Review();
+        review.setReviewId(rs.getInt("review_id"));
         review.setUserId(rs.getInt("user_id"));
+        review.setBeerName(rs.getString("name"));
         review.setBreweryId(rs.getInt("brewery_id"));
         review.setBeerId(rs.getInt("beer_id"));
         review.setText(rs.getString("text"));

@@ -12,7 +12,6 @@ public interface beersDao {
 
     void deleteBeer(long beerId);
 
-
     Beer getBeerById(long beerId);
 
     boolean updateBeer(Beer beer, long id);
@@ -22,6 +21,5 @@ public interface beersDao {
     Beer getBeerByName(String name);
 
     List<Beer> getBeersByUserId(long userId);
-
 
 }
