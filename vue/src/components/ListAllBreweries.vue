@@ -3,7 +3,11 @@
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Name
+                        <!-- <select name="" id="sort">
+                            <option value="" v-on:click="sortByName()">Sort A-Z</option>
+                        </select> -->
+                    </th>
                     <th>History</th>
                     <th>Address</th>
                     <th>Phone</th>
@@ -47,6 +51,21 @@ export default {
                 this.breweries = response.data;
                 this.isLoading = false;
             })
+    },
+    methods: {
+        sortByName() {
+            this.breweries.sort((a, b) => {
+                const nameA = a.name;
+                const nameB = b.name;
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+            })
+        }
     }
 }
 </script>
