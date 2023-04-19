@@ -132,6 +132,9 @@ const router = new Router({
 function isAdmin() {
   return store.state.user.authorities[0].name === "ROLE_ADMIN";
 }
+function isBrewer() {
+  return store.state.user.authorities[0].name === "ROLE_BREWER";
+}
 
 function isBrewer() {
   return store.state.user.authorities[0].name === "ROLE_BREWER";
