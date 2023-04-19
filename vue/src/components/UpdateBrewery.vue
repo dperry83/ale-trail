@@ -100,7 +100,7 @@ export default {
       try {
           //get all breweries
         const response = await BreweryService.getAllBreweries()
-        this.breweries = response.data
+        this.breweries = response.data.sort((a, b) => a.name.localeCompare(b.name));
       } catch (error) {
         console.log(error)
         alert('Failed to fetch breweries')
