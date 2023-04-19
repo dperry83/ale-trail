@@ -61,4 +61,14 @@ public class BeerController {
     public void deleteBeer(@PathVariable long id) {
         beerDAO.deleteBeer(id);
     }
+
+    @RequestMapping(path = "/beers/userId={userId}", method = RequestMethod.GET)
+    public List<Beer> getBeersByUserId(@PathVariable long userId) {
+        System.out.println("Fetching beers by user ID: " + userId);
+        List<Beer> listOfBeer = beerDAO.getBeersByUserId(userId);
+        System.out.println("Fetched " + listOfBeer.size() + " beers for user ID: " + userId);
+        return listOfBeer;
+    }
+
+
 }

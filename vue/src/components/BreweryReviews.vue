@@ -79,6 +79,7 @@ export default {
       this.beers = response.data.sort((a, b) => a.name.localeCompare(b.name));
       //look on line 85... it is filtering the beers by brewery
       this.filterBeers();
+      
     });
   },
 

@@ -21,5 +21,7 @@ public interface beersDao {
 
     Beer getBeerByName(String name);
 
+    List<Beer> getBeersByUserId(long userId);
+
 
 }

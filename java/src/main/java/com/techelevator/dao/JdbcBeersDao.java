@@ -98,6 +98,21 @@ public class JdbcBeersDao implements beersDao{
         return beer;
     }
 
+    @Override
+    public List<Beer> getBeersByUserId(long userId) {
+        List<Beer> allBeers = new ArrayList<>();
+        String sqlSelectAllBeers = "SELECT b.* FROM beers b JOIN brewery br ON b.brewery_id = br.brewery_id WHERE br.user_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllBeers, userId);
+
+        while (results.next()) {
+            Beer beers = mapRowToBeer(results);
+            allBeers.add(beers);
+        }
+        System.out.println("JdbcBeersDao found " + allBeers.size() + " beers for user ID: " + userId);
+        return allBeers;
+    }
+
+
     private Beer mapRowToBeer(SqlRowSet rs){
         Beer beer = new Beer();
         beer.setBeerId(rs.getInt("beer_id"));
