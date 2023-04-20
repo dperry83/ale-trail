@@ -4,12 +4,12 @@
             <router-link
                 class="footer-link"
                 v-bind:to="{ name: 'admin' }"
-                v-if="authUserRole === 'ROLE_ADMIN'"
+                v-if="this.$store.state.user.authorities[0].name === 'ROLE_ADMIN'"
                 >Admin</router-link><br>
             <router-link
                 class="footer-link"
                 v-bind:to="{ name: 'brewer'}"
-                v-if="authUserRole === 'ROLE_BREWER'"
+                v-if="this.$store.state.user.authorities[0].name === 'ROLE_BREWER'"
                 >Brewer</router-link>
         </div>
     </div>
@@ -17,22 +17,9 @@
 </template>
 
 <script>
-import UserService from '../services/UserService.js'
 
 export default {
-    name: 'the-footer',
-    data() {
-        return {
-            authUserRole: ''
-        }
-    },
-    created() {
-        UserService
-            .getCurrentUser(this.$store.state.user.username)
-            .then( response => {
-                this.authUserRole = response.data.authorities[0].name
-            })
-    }
+    name: 'the-footer'
 }
 </script>
 

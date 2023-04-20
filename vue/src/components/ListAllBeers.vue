@@ -62,12 +62,18 @@ table {
     margin: auto;
     border-collapse: collapse;
     padding: 10px 30px 10px 15px;
-    
+  
 }
 th, td {
     text-align: center;
     border: 1px solid black;
-    padding: 13px 10px;
+    padding: 13px 10px; 
+    
+}
+
+th {
+    color: white;
+    background-color: #062851;
 }
 td {
     padding-right: 10px;

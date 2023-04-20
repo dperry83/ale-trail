@@ -1,7 +1,7 @@
 
 <template>
   <div class="reviews">
-    <div v-if="reviews.length === 0">
+    <div id= "noreview" v-if="reviews.length === 0">
       No reviews available for this brewery.
     </div>
 
@@ -51,7 +51,12 @@ export default {
 
 <style scoped>
 
+#noreview {
+  text-align: center;
+}
+
 .reviews {
+  padding-top: 20px;
   margin: auto;
   width: 60%;
 }

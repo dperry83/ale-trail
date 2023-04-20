@@ -5,9 +5,6 @@
         <tr>
           <th>
             Name
-            <!-- <select name="" id="sort">
-                            <option value="" v-model="">Sort A-Z</option>
-                        </select> -->
             <input type="text" v-model="searchTerm" placeholder="search" />
           </th>
           <th>History</th>
@@ -67,13 +64,6 @@ export default {
       });
     },
   },
-  methods: {
-    sortByName() {
-      this.breweries.sort((a, b) => {
-        return a.name - b.name;
-      });
-    },
-  },
 };
 </script>
 
@@ -88,6 +78,11 @@ td {
   text-align: center;
   border: 1px solid black;
   padding: 13px 10px;
+}
+
+th {
+  color: white;
+  background-color: #062851;
 }
 td {
   padding-right: 10px;
