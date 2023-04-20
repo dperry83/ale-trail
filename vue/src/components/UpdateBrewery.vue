@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="allUpdate">
     <h2>Update Brewery</h2>
     <form @submit.prevent="updateBrewery">
         <!-- drop down list to choose brewery to update -->
@@ -7,39 +7,39 @@
         <select id="breweryId" v-model="selectedBreweryId" required>
             <option disabled value="">Please select one</option>
             <option v-for="brewery in breweries" :value="brewery.breweryId" :key="brewery.breweryId">{{ brewery.name }}</option>
-        </select>
+        </select><br><br>
 
         <!-- input fields for brewery updates -->
         <label for="name">Name:</label>
         <input type="text" id="name" v-model="brewery.name" required>
-        <br>
+        <br><br>
 
         <label for="image">Image URL:</label>
         <input type="text" id="image" v-model="brewery.image">
-        <br>
+        <br><br>
 
-        <label for="history">History:</label>
+        <label for="history">History:</label><br>
         <textarea id="history" v-model="brewery.history"></textarea>
-        <br>
+        <br><br>
 
         <label for="website">Website:</label>
         <input type="text" id="website" v-model="brewery.website">
-        <br>
+        <br><br>
 
         <label for="hours_days_operation">Hours/Days of Operation:</label>
         <input type="text" id="hours_days_operation" v-model="brewery.hours_days_operation">
-        <br>
+        <br><br>
 
         <label for="address">Address:</label>
         <input type="text" id="address" v-model="brewery.address" required>
-        <br>
+        <br><br>
 
         <label for="phone">Phone:</label>
         <input type="text" id="phone" v-model="brewery.phone">
-        <br>
+        <br><br>
         
-        <button type="button" @click="updateBrewery">Update Brewery</button>
-    </form>
+        <button type="button" id="updateBrewB" @click="updateBrewery">Update Brewery</button>
+    </form><br>
   </div>
 </template>
 
@@ -116,5 +116,49 @@ export default {
 </script>
 
 <style scoped>
+#allUpdate{
+  margin-left: 50px;
+
+}
+#updateBrewB{
+  border: 1px solid black;
+  background: rgba(6,40,81,255);
+  background-clip: padding-box;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+#breweryId{
+  margin-left: 65px;
+}
+
+#name{
+margin-left: 145px;
+}
+
+#image{
+margin-left: 110px;
+}
+
+#history{
+margin-left: 190px;
+}
+
+#website{
+  margin-left: 127px;
+}
+
+#address{
+  margin-left: 128px;
+}
+
+#phone{
+  margin-left: 139px;
+}
+
+#hours_days_operation{
+  margin-left: 7px;
+}
 
 </style>

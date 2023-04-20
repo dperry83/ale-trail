@@ -1,5 +1,6 @@
 <template>
     <div class="users">
+        <br><br>
         <div class="all-users">
         <table class="user-table">
             <thead>
@@ -95,10 +96,10 @@
                 <h4>City: {{ activeUser.city }} </h4>
                 <h4>State: {{ activeUser.state }} </h4>
                 <h4>Zip: {{ activeUser.zip }} </h4>
-            </div>
-            <button @click="changeRole(activeUser)"  >Commit Changes</button>
-            <button @click="cancelChange()"> Cancel</button>
-        </div>
+            </div><br>
+            <button id="b1" @click="changeRole(activeUser)"  >Commit Changes</button>&nbsp;&nbsp;
+            <button id="b2" @click="cancelChange()"> Cancel</button>
+        </div><br>
     </div>
 </template>
 
@@ -154,6 +155,20 @@ table {
     ;
    
 }
+
+#b1, #b2 {
+    border: 1px solid black;
+background: rgba(6,40,81,255);
+background-clip: padding-box;
+color: white;
+padding: 2px 10px;
+border-radius: 5px;
+}
+
+
+
+
+
 th, td {
     text-align: center;
     border: 1px solid black;

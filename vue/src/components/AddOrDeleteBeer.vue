@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="allBeer">
     <!-- if user is admin or brewer, the add/delete form will show. if they are user, then it wont show -->
     <div v-if="isAdminOrBrewer">
 
@@ -9,43 +9,43 @@
         <h3>Add Beer</h3>
           <label for="name">Name:</label>
           <input type="text" id="name" v-model="newBeer.name" required>
-          <br>
+          <br><br>
 
-          <label for="description">Description:</label>
+          <label for="description">Description:</label><br>
           <textarea id="description" v-model="newBeer.description"></textarea>
-          <br>
+          <br><br>
 
           <label for="abv">ABV:</label>
           <input type="number" id="abv" v-model="newBeer.abv" step="0.01" required>
-          <br>
+          <br><br>
 
           <label for="beerType">Beer Type:</label>
           <input type="text" id="beerType" v-model="newBeer.beerType" required>
-          <br>
+          <br><br>
 
           <!-- loop through filteredBreweries to select brewery based on user logged in -->
-          <label for="breweryId">Brewery:</label>
+          <label for="breweryId">Brewery:</label>&nbsp;
           <select id="breweryId" v-model="newBeer.breweryId">
             <option v-for="brewery in filteredBreweries" :value="brewery.breweryId" :key="brewery.breweryId">{{ brewery.name }}</option>
           </select>
-          <br>
-          <button type="submit">Add Beer</button>
+          <br><br>
+          <button type="submit" id="addBeer">Add Beer</button>
       </form>
 
       <!-- Delete Beer -->
       <form @submit.prevent="deleteBeer">
           <h3>Delete Beer</h3>
-          <label for="breweryToDelete">Brewery:</label>
+          <label for="breweryToDelete">Brewery:</label>&nbsp;
           <select id="breweryToDelete" v-model="breweryToDelete">
               <option v-for="brewery in filteredBreweries" :value="brewery.breweryId" :key="brewery.breweryId">{{ brewery.name }}</option>
           </select>
-          <br>
-          <label for="beerId">Beer:</label>
+          <br><br>
+          <label for="beerId">Beer:</label>&nbsp;
           <select id="beerId" v-model="beerToDelete">
               <option v-for="beer in filteredBeers" :value="beer.beerId" :key="beer.beerId">{{ beer.name }}</option>
           </select>
-          <br>
-          <button type="submit">Delete Beer</button>
+          <br><br>
+          <button type="submit" id="deleteBeer">Delete Beer</button>
       </form>
     </div>
   </div>
@@ -162,6 +162,30 @@ computed: {
 </script>
 
 <style>
+#allBeer{
+  margin-left: 50px;
+}
+
+#name{
+  margin-left: 80px;
+}
+#description{
+  margin-left: 126px;
+}
+#abv{
+  margin-left: 93px;
+}
+#beerType{
+  margin-left: 50px;
+}
+#addBeer, #deleteBeer{
+  border: 1px solid black;
+  background: rgba(6,40,81,255);
+  background-clip: padding-box;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
 
 </style>
     

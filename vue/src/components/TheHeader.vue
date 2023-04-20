@@ -1,7 +1,11 @@
 <template>
     <div class="header">
+        <div class="logo-nav-container">
+        <div class="logo-container">
         <img id="logo" src="/logo_thumbnail.png">
         <h2 class="tagline">ALE TRAIL</h2>
+        </div>
+
         <div id="nav" >
             
             <router-link id="headerHome" v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;&nbsp;|&nbsp;
@@ -12,7 +16,7 @@
             
             
         </div>
-
+        </div>
         <div style="height: 30px; width: 100%; background-color:  rgba(6,40,81,255); color: white;"/>
         
     
@@ -46,6 +50,17 @@ export default {
 
 <style>
 
+.logo-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+
 #box{
     width: 220px;
 }
@@ -75,10 +90,10 @@ font-weight: bolder;
 }
 
 #nav {
-    display: inline-block;
-    margin-top:30px;
-    position: absolute;
-    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
     
 }
 
@@ -112,20 +127,29 @@ padding: 2px 20px;
 border-radius: 5px;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 900px) {
     
-    .tagline {
-        font-size: 24px;
-        margin-left: 5px;
-    }
+   .logo-nav-container{
+       flex-direction: column;
+   }
 
-    
+   .tagline{
+       font-size: 24px;
+       margin-left: 5px;
+       margin-top: 5px;
+   }
 
     #box {
-        width: 180px;
+        width: 220px;
     }
 
-
+    #nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    
+}
 
 }
     

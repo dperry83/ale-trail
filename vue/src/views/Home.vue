@@ -93,7 +93,7 @@ blockquote {
 }
 
 p {
-  width: 600px;
+  width: 700px;
 }
 
 
