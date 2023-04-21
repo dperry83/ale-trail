@@ -106,6 +106,7 @@ export default {
             BreweryService
                 .addNewBrewery(this.newBrewery)
                 .then(response => {
+                    alert('Brewery Successfully Added!')
                     if(response.status === 201) {
                         console.log("brewery successfully added");
                     }
