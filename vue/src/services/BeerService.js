@@ -17,10 +17,7 @@ export default {
     deleteBeer(beerId) {
         return http.delete(`/beers/${beerId}`);
     },
-
     getBeersByUserId(userId) {
         return http.get(`/beers/userId=${userId}`);
-
-
     },
 }
