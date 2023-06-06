@@ -9,11 +9,11 @@ DROP TABLE IF EXISTS events;
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     role VARCHAR(50) NOT NULL,
-    email VARCHAR(150) NOT NULL
+    email VARCHAR(150) NOT NULL,
     username varchar(50) NOT NULL UNIQUE,
     password_hash varchar(200) NOT NULL,
     first_name VARCHAR(50),
-    last_name VARCHAR(50)
+    last_name VARCHAR(50),
     city VARCHAR(55) NOT NULL,
     state VARCHAR(2) NOT NULL,
     zip VARCHAR(10) NOT NULL
@@ -22,7 +22,7 @@ CREATE TABLE users (
 
 CREATE TABLE breweries (
     brewery_id SERIAL PRIMARY KEY,
-    user_id INT NOT NULL,
+    brewer_id INT NOT NULL,
     name VARCHAR(255) NOT NULL,
     image TEXT,
     history TEXT,
@@ -30,7 +30,7 @@ CREATE TABLE breweries (
     hours_days_operation VARCHAR(255),
     address VARCHAR(255) NOT NULL,
     phone VARCHAR(20),
-    FOREIGN KEY (user_id) REFERENCES users (user_id)
+    FOREIGN KEY (brewer_id) REFERENCES users (user_id)
 );
 
 
@@ -68,6 +68,7 @@ CREATE TABLE events (
 	time_start TIME NOT NULL,
 	time_end TIME,
 	description TEXT,
+	price VARCHAR(50) NOT NULL DEFAULT 'free',
 	FOREIGN KEY (brewery_id) REFERENCES breweries (brewery_id)
 );
 

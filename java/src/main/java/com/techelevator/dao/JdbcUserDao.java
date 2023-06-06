@@ -88,8 +88,8 @@ public class JdbcUserDao implements UserDao {
                 "SET role = ?, username = ?, name = ?, city = ?, state = ?, zip = ? " +
                 "WHERE user_id = ?;";
         try {
-            jdbcTemplate.update(updateUserSql, user.getRole(), user.getUsername(), user.getName(),
-                            user.getCity(), user.getState(), user.getZip(), id);
+            jdbcTemplate.update(updateUserSql, user.getRole(), user.getUsername(), user.getFirstName(),
+                            user.getLastName(), user.getCity(), user.getState(), user.getZip(), id);
         }catch(DataIntegrityViolationException e) {
             updateUserSql = "ROLLBACK;";
             jdbcTemplate.update(updateUserSql);
@@ -102,7 +102,8 @@ public class JdbcUserDao implements UserDao {
         User user = new User();
         user.setId(rs.getInt("user_id"));
         user.setUsername(rs.getString("username"));
-        user.setName(rs.getString("name"));
+        user.setFirstName(rs.getString("first_name"));
+        user.setLastName(rs.getString("last_name"));
         user.setCity(rs.getString("city"));
         user.setState(rs.getString("state"));
         user.setZip((rs.getString("zip")));

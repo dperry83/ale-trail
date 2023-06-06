@@ -14,7 +14,9 @@ public class User {
    private String password;
    @JsonIgnore
    private boolean activated;
-   private String name;
+   private String firstName;
+   private String lastName;
+   private String email;
    private String city;
    private String state;
    private String zip;
@@ -29,6 +31,22 @@ public class User {
       this.password = password;
       if(authorities != null) this.setAuthorities(authorities);
       this.activated = true;
+   }
+
+   public User(int id, String username, String password, String authorities, String firstName,
+                  String lastName, String email, String city, String state, String zip) {
+      this.id = id;
+      this.username = username;
+      this.password = password;
+      if(authorities != null) this.setAuthorities(authorities);
+      this.activated = true;
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.email = email;
+      this.city = city;
+      this.state = state;
+      this.zip = zip;
+      this.role = role;
    }
 
    public String getRole() {
@@ -79,12 +97,26 @@ public class User {
       this.authorities = authorities;
    }
 
-   public String getName() {
-      return name;
+   public String getFirstName() {
+      return firstName;
    }
 
-   public void setName(String name) {
-      this.name = name;
+   public void setFirstName(String name) {
+      this.firstName = name;
+   }
+
+   public String getLastName() {
+      return lastName;
+   }
+
+   public void setLastName(String lastName) {
+      this.lastName = lastName;
+   }
+   public String getEmail() {
+      return email;
+   }
+   public void setEmail(String email) {
+      this.email = email;
    }
 
    public String getCity() {
